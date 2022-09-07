@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
     }
     use {'neoclide/coc.nvim', branch = 'release'}
     use 'tpope/vim-sleuth'
+    use 'tpope/vim-surround'
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
