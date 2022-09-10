@@ -5,6 +5,7 @@ nnoremap("<leader>ff", "<cmd>Telescope find_files<CR>")
 nnoremap("<leader>fg", "<cmd>Telescope live_grep<CR>")
 nnoremap("<leader>n", "<cmd>set invnumber invrelativenumber<CR>")
 nnoremap("<leader>w", "<cmd>set list!<CR>")
+nnoremap("<leader>v", "<cmd>Telescope neoclip<CR>")
 
 -- COC
 vim.cmd([[
