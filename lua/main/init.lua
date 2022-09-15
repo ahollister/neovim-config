@@ -4,5 +4,5 @@ require("main.packer")
 require("main.treesitter")
 require("main.prettier")
 require("main.neoclip")
-require("main.neoscroll")
-
+require("main.colorizer")
+require("main.harpoon")

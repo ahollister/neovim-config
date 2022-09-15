@@ -16,13 +16,16 @@ return require('packer').startup(function(use)
     }
     use {'neoclide/coc.nvim', branch = 'release'}
     use 'tpope/vim-sleuth'
+    use 'norcalli/nvim-colorizer.lua'
     -- use 'tpope/vim-surround'
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
     use 'mattn/emmet-vim'
+    use 'windwp/nvim-ts-autotag'
     use 'psliwka/vim-smoothie'
+    use "numToStr/FTerm.nvim"
     use {
       "AckslD/nvim-neoclip.lua",
       requires = {
@@ -34,4 +37,5 @@ return require('packer').startup(function(use)
         require('neoclip').setup()
       end,
     }
+    use 'ThePrimeagen/harpoon'
 end)
