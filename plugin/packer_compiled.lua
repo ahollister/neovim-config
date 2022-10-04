@@ -109,12 +109,6 @@ _G.packer_plugins = {
     path = "/Users/adam/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
-  ["nvim-comment"] = {
-    config = { "\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17nvim_comment\frequire\0" },
-    loaded = true,
-    path = "/Users/adam/.local/share/nvim/site/pack/packer/start/nvim-comment",
-    url = "https://github.com/terrortylor/nvim-comment"
-  },
   ["nvim-neoclip.lua"] = {
     config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fneoclip\frequire\0" },
     loaded = true,
@@ -179,10 +173,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-comment
-time([[Config for nvim-comment]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17nvim_comment\frequire\0", "config", "nvim-comment")
-time([[Config for nvim-comment]], false)
 -- Config for: nvim-neoclip.lua
 time([[Config for nvim-neoclip.lua]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fneoclip\frequire\0", "config", "nvim-neoclip.lua")
