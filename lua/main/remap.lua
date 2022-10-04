@@ -3,15 +3,16 @@ local inoremap = require("main.keymap").inoremap
 local vnoremap = require("main.keymap").vnoremap
 
 nnoremap("<leader>p", "<cmd>Prettier<CR>")
+nnoremap("<leader>a", "<cmd>AerialToggle left<CR>")
 nnoremap("<leader>s", "<cmd>w<CR>")
 nnoremap("<leader>b", "<cmd>Ex<CR>")
-nnoremap("<leader>ff", "<cmd>Telescope find_files<CR>")
+nnoremap("<leader>fs", "<cmd>Telescope find_files<CR>")
 nnoremap("<leader>fg", "<cmd>Telescope live_grep<CR>")
 nnoremap("<leader>fw", function() require("telescope.builtin").grep_string({search = vim.fn.expand("<cword>")}) end, silent)
 nnoremap("<leader>n", "<cmd>set invnumber invrelativenumber<CR>")
 nnoremap("<leader>w", "<cmd>set list!<CR>")
 nnoremap("<leader>v", "<cmd>Telescope neoclip<CR>")
-nnoremap("<leader>hh", function() require("harpoon.ui").toggle_quick_menu() end, silent)
+nnoremap("<leader>hs", function() require("harpoon.ui").toggle_quick_menu() end, silent)
 nnoremap("<leader>ha", function() require("harpoon.mark").add_file() end, silent)
 nnoremap("<leader>1", function() require("harpoon.ui").nav_file(1) end, silent)
 nnoremap("<leader>2", function() require("harpoon.ui").nav_file(2) end, silent)
@@ -19,15 +20,14 @@ nnoremap("<leader>3", function() require("harpoon.ui").nav_file(3) end, silent)
 nnoremap("<leader>4", function() require("harpoon.ui").nav_file(4) end, silent)
 nnoremap("<leader><Right>", function() require("harpoon.ui").nav_next() end, silent)
 nnoremap("<leader><Left>", function() require("harpoon.ui").nav_prev() end, silent)
+
 -- Move lines
 nnoremap("<C-k>", "<cmd>m .-2<CR>==")
 nnoremap("<C-j>", "<cmd>m .+1<CR>==")
 inoremap("<C-k>", "<cmd>m .-2<CR>")
 inoremap("<C-j>", "<cmd>m .+1<CR>")
 
-
 nnoremap("<leader>t", "<CMD>lua require(\"FTerm\").toggle()<CR>")
-
 
 -- COC
 vim.cmd([[

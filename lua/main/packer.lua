@@ -4,38 +4,45 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
-    use 'PeterRincker/vim-searchlight'
-    use 'folke/tokyonight.nvim' 
-    use 'npxbr/gruvbox.nvim'
-    -- use 'pineapplegiant/spaceduck'
-    use 'ahollister/spacebun'
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
-    use {'neoclide/coc.nvim', branch = 'release'}
-    use 'tpope/vim-sleuth'
-    use 'norcalli/nvim-colorizer.lua'
-    -- use 'tpope/vim-surround'
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
-    use 'mattn/emmet-vim'
-    use 'windwp/nvim-ts-autotag'
-    use 'psliwka/vim-smoothie'
-    use "numToStr/FTerm.nvim"
-    use {
-      "AckslD/nvim-neoclip.lua",
-      requires = {
-        -- you'll need at least one of these
-        {'nvim-telescope/telescope.nvim'},
-        -- {'ibhagwan/fzf-lua'},
-      },
-      config = function()
-        require('neoclip').setup()
-      end,
-    }
-    use 'ThePrimeagen/harpoon'
+  use 'wbthomason/packer.nvim'
+  use 'PeterRincker/vim-searchlight'
+  use 'folke/tokyonight.nvim' 
+  use 'npxbr/gruvbox.nvim'
+  -- use 'pineapplegiant/spaceduck'
+  use 'ahollister/spacebun'
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use {'neoclide/coc.nvim', branch = 'release'}
+  use 'tpope/vim-sleuth'
+  use 'norcalli/nvim-colorizer.lua'
+  use 'tpope/vim-surround'
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+  use 'mattn/emmet-vim'
+  use 'windwp/nvim-ts-autotag'
+  use 'psliwka/vim-smoothie'
+  use "numToStr/FTerm.nvim"
+  use {
+    "AckslD/nvim-neoclip.lua",
+    requires = {
+      -- you'll need at least one of these
+      {'nvim-telescope/telescope.nvim'},
+      -- {'ibhagwan/fzf-lua'},
+    },
+    config = function()
+      require('neoclip').setup()
+    end,
+  }
+  use 'ThePrimeagen/harpoon'
+  use 'stevearc/aerial.nvim'
+  use {
+    "terrortylor/nvim-comment",
+    config = function()
+      require('nvim_comment').setup()
+    end,
+  }
 end)
