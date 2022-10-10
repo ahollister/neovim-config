@@ -41,4 +41,5 @@ return require('packer').startup(function(use)
   use 'stevearc/aerial.nvim'
   use 'fannheyward/telescope-coc.nvim'
   use 'tpope/vim-commentary'
+  use 'github/copilot.vim'
 end)
