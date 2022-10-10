@@ -39,4 +39,6 @@ return require('packer').startup(function(use)
   }
   use 'ThePrimeagen/harpoon'
   use 'stevearc/aerial.nvim'
+  use 'fannheyward/telescope-coc.nvim'
+  use 'tpope/vim-commentary'
 end)
