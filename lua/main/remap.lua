@@ -27,6 +27,7 @@ nnoremap("<leader>v", "<cmd>Telescope neoclip<CR>")
 nnoremap("<leader>cd", "<CMD>Telescope coc definitions<CR>")
 nnoremap("<leader>ct", "<CMD>Telescope coc type_definitions<CR>")
 nnoremap("<leader>cr", "<CMD>Telescope coc references<CR>")
+nnoremap("<leader>cs", "<CMD>Telescope coc document_symbols<CR>")
 -- Treesitter
 nnoremap("<leader>ts", "<CMD>lua require'telescope.builtin'.treesitter{}<CR>")
 -- Harpoon
