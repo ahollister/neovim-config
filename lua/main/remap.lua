@@ -3,6 +3,7 @@ local inoremap = require("main.keymap").inoremap
 local vnoremap = require("main.keymap").vnoremap
 
 -- Generic
+nnoremap("<leader>r", "<cmd>source $MYVIMRC<CR>")
 nnoremap("<leader>n", "<cmd>set invnumber invrelativenumber<CR>")
 nnoremap("<leader>w", "<cmd>set list!<CR>")
 nnoremap("<leader>s", "<cmd>w<CR>")
@@ -24,7 +25,7 @@ nnoremap("<leader>fw", function() require("telescope.builtin").grep_string({sear
 -- Telescope Neoclip
 nnoremap("<leader>v", "<cmd>Telescope neoclip<CR>")
 -- COC
-nnoremap("<leader>cd", "<CMD>Telescope coc definitions<CR>")
+nnoremap("<leader>cd", "<CMD>call CocActionAsync('jumpDefinition')<CR>")
 nnoremap("<leader>ct", "<CMD>Telescope coc type_definitions<CR>")
 nnoremap("<leader>cr", "<CMD>Telescope coc references<CR>")
 nnoremap("<leader>cs", "<CMD>Telescope coc document_symbols<CR>")
@@ -39,8 +40,12 @@ nnoremap("<leader>3", function() require("harpoon.ui").nav_file(3) end, silent)
 nnoremap("<leader>4", function() require("harpoon.ui").nav_file(4) end, silent)
 nnoremap("<leader><Right>", function() require("harpoon.ui").nav_next() end, silent)
 nnoremap("<leader><Left>", function() require("harpoon.ui").nav_prev() end, silent)
+-- GitGutter
+nnoremap("<leader>ggt", "<cmd>GitGutterToggle<CR>")
+nnoremap("<leader>ggp", "<cmd>GitGutterPreviewHunk<CR>")
+nnoremap("<leader>ggl", "<cmd>GitGutterLineNrHighlightsToggle<CR>")
 
--- Use K to show documentation in preview window.
+-- Use <leader>K to show documentation in preview window.
 function _G.show_docs()
     local cw = vim.fn.expand('<cword>')
     if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then

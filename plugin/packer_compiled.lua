@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/adam/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/Users/adam/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/Users/adam/.local/share/nvim/site/pack/packer/start/emmet-vim",
@@ -140,6 +145,11 @@ _G.packer_plugins = {
     path = "/Users/adam/.local/share/nvim/site/pack/packer/start/spacebun",
     url = "https://github.com/ahollister/spacebun"
   },
+  ["telescope-coc.nvim"] = {
+    loaded = true,
+    path = "/Users/adam/.local/share/nvim/site/pack/packer/start/telescope-coc.nvim",
+    url = "https://github.com/fannheyward/telescope-coc.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/adam/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -149,6 +159,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/adam/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/Users/adam/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "/Users/adam/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    url = "https://github.com/airblade/vim-gitgutter"
   },
   ["vim-searchlight"] = {
     loaded = true,

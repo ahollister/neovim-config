@@ -42,4 +42,5 @@ return require('packer').startup(function(use)
   use 'fannheyward/telescope-coc.nvim'
   use 'tpope/vim-commentary'
   use 'github/copilot.vim'
+  use 'airblade/vim-gitgutter'
 end)

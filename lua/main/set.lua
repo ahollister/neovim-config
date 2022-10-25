@@ -9,6 +9,7 @@ vim.opt.guicursor = {
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.numberwidth = 1
 
 vim.opt.errorbells = false
 
@@ -23,10 +24,14 @@ vim.opt.wrap = false
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
+-- Default to case insensitive search
+vim.opt.ignorecase = true
+-- Use case sensitive search if pattern includes uppercase letter
+vim.opt.smartcase = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 999
 vim.opt.signcolumn = "yes"
 
 -- Give more space for displaying messages.
