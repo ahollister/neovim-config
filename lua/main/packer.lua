@@ -6,7 +6,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'PeterRincker/vim-searchlight'
-  use 'folke/tokyonight.nvim' 
+   use 'folke/tokyonight.nvim' 
   use 'npxbr/gruvbox.nvim'
   -- use 'pineapplegiant/spaceduck'
   use 'ahollister/spacebun'
@@ -38,9 +38,9 @@ return require('packer').startup(function(use)
     end,
   }
   use 'ThePrimeagen/harpoon'
-  use 'stevearc/aerial.nvim'
   use 'fannheyward/telescope-coc.nvim'
   use 'tpope/vim-commentary'
   use 'github/copilot.vim'
   use 'airblade/vim-gitgutter'
+  use 'xiyaowong/nvim-transparent'
 end)

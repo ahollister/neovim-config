@@ -6,3 +6,4 @@ vim.opt.background = "dark"
 -- vim.cmd("colorscheme tokyonight")
 -- vim.cmd("colorscheme gruvbox")
 vim.cmd("colorscheme spaceduck")
+vim.cmd("TransparentEnable")

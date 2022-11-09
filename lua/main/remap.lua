@@ -1,13 +1,15 @@
 local nnoremap = require("main.keymap").nnoremap
 local inoremap = require("main.keymap").inoremap
 local vnoremap = require("main.keymap").vnoremap
-
+ 
 -- Generic
 nnoremap("<leader>r", "<cmd>source $MYVIMRC<CR>")
 nnoremap("<leader>n", "<cmd>set invnumber invrelativenumber<CR>")
 nnoremap("<leader>w", "<cmd>set list!<CR>")
 nnoremap("<leader>s", "<cmd>w<CR>")
 nnoremap("<leader>b", "<cmd>Ex<CR>")
+nnoremap("<leader>R", "\"_diwP<CR>")
+nnoremap("<leader>r", "\"_diwp<CR>")
 -- Open terminal instance
 nnoremap("<leader>tt", "<CMD>lua require(\"FTerm\").toggle()<CR>")
 -- Move lines
@@ -17,7 +19,6 @@ inoremap("<C-k>", "<cmd>m .-2<CR>")
 inoremap("<C-j>", "<cmd>m .+1<CR>")
 -- Prettier
 nnoremap("<leader>p", "<cmd>Prettier<CR>")
-nnoremap("<leader>a", "<cmd>AerialToggle left<CR>")
 -- Telescope 'find'
 nnoremap("<leader>fs", "<cmd>Telescope find_files<CR>")
 nnoremap("<leader>fg", "<cmd>Telescope live_grep<CR>")
@@ -44,6 +45,9 @@ nnoremap("<leader><Left>", function() require("harpoon.ui").nav_prev() end, sile
 nnoremap("<leader>ggt", "<cmd>GitGutterToggle<CR>")
 nnoremap("<leader>ggp", "<cmd>GitGutterPreviewHunk<CR>")
 nnoremap("<leader>ggl", "<cmd>GitGutterLineNrHighlightsToggle<CR>")
+
+-- Toggle Transparency
+nnoremap("<leader>tr", "<cmd>TransparentToggle<CR>")
 
 -- Use <leader>K to show documentation in preview window.
 function _G.show_docs()

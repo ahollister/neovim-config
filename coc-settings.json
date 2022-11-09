@@ -1,7 +1,6 @@
 {
   "coc.preferences.useQuickfixForLocations": true,
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "typescript", "javascriptreact", "typescriptreact"],
-  "css.enable": false,
-  "tailwindCSS.headwind.runOnSave": false
+  "coc.preferences.formatOnSaveFiletypes": ["markdown", "javascript", "typescript", "javascriptreact", "typescriptreact"],
+  "css.enable": false
 }
 
