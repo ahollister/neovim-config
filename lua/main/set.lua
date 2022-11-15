@@ -46,5 +46,3 @@ vim.g.mapleader = " "
 
 -- Whitespace chars
 vim.opt.listchars = { tab = '>-', trail = '~', space = '·', eol = '↵' }
-
-
