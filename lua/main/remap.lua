@@ -30,6 +30,7 @@ nnoremap("<leader>3", function() require("harpoon.ui").nav_file(3) end, silent)
 nnoremap("<leader>4", function() require("harpoon.ui").nav_file(4) end, silent)
 nnoremap("<leader><Right>", function() require("harpoon.ui").nav_next() end, silent)
 nnoremap("<leader><Left>", function() require("harpoon.ui").nav_prev() end, silent)
+nnoremap("<leader><Up>", function() require("harpoon.term").gotoTerminal(1) end, silent)
 -- GitGutter
 nnoremap("<leader>ggt", "<cmd>GitGutterToggle<CR>", silent)
 nnoremap("<leader>ggp", "<cmd>GitGutterPreviewHunk<CR>", silent)
