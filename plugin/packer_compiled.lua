@@ -74,15 +74,16 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["FTerm.nvim"] = {
-    loaded = true,
-    path = "/Users/adam/.local/share/nvim/site/pack/packer/start/FTerm.nvim",
-    url = "https://github.com/numToStr/FTerm.nvim"
-  },
   LuaSnip = {
     loaded = true,
     path = "/Users/adam/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  ["SmoothCursor.nvim"] = {
+    config = { "\27LJ\2\n�\4\0\0\6\0\18\0\0296\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0005\4\5\0=\4\6\0034\4\b\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\0045\5\v\0>\5\5\0045\5\f\0>\5\6\0045\5\r\0>\5\a\4=\4\14\0035\4\15\0=\4\16\3=\3\17\2B\0\2\1K\0\1\0\nfancy\ttail\1\0\1\vtexthl\17SmoothCursor\tbody\1\0\2\vtexthl\23SmoothCursorPurple\vcursor\6.\1\0\2\vtexthl\21SmoothCursorBlue\vcursor\6.\1\0\2\vtexthl\21SmoothCursorAqua\vcursor\b•\1\0\2\vtexthl\22SmoothCursorGreen\vcursor\b●\1\0\2\vtexthl\23SmoothCursorYellow\vcursor\b●\1\0\2\vtexthl\23SmoothCursorOrange\vcursor\b●\1\0\2\vtexthl\20SmoothCursorRed\vcursor\b●\thead\1\0\2\vcursor\b▷\vtexthl\17SmoothCursor\1\0\1\venable\2\1\0\t\14threshold\3\3\ttype\fdefault\rpriority\3\n\14intervals\3#\nspeed\3\25\ftimeout\3�\23\vtexthl\17SmoothCursor\vcursor\b\14autostart\2\nsetup\17smoothcursor\frequire\0" },
+    loaded = true,
+    path = "/Users/adam/.local/share/nvim/site/pack/packer/start/SmoothCursor.nvim",
+    url = "https://github.com/gen740/SmoothCursor.nvim"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -93,6 +94,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/adam/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/Users/adam/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
   },
   ["fidget.nvim"] = {
     loaded = true,
@@ -180,6 +186,11 @@ _G.packer_plugins = {
     path = "/Users/adam/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["telescopenotes.nvim"] = {
+    loaded = true,
+    path = "/Users/adam/.local/share/nvim/site/pack/packer/start/telescopenotes.nvim",
+    url = "https://github.com/ahollister/telescopenotes.nvim"
+  },
   ["tokyonight.nvim"] = {
     loaded = true,
     path = "/Users/adam/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
@@ -222,6 +233,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-neoclip.lua]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fneoclip\frequire\0", "config", "nvim-neoclip.lua")
 time([[Config for nvim-neoclip.lua]], false)
+-- Config for: SmoothCursor.nvim
+time([[Config for SmoothCursor.nvim]], true)
+try_loadstring("\27LJ\2\n�\4\0\0\6\0\18\0\0296\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0005\4\5\0=\4\6\0034\4\b\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\0045\5\v\0>\5\5\0045\5\f\0>\5\6\0045\5\r\0>\5\a\4=\4\14\0035\4\15\0=\4\16\3=\3\17\2B\0\2\1K\0\1\0\nfancy\ttail\1\0\1\vtexthl\17SmoothCursor\tbody\1\0\2\vtexthl\23SmoothCursorPurple\vcursor\6.\1\0\2\vtexthl\21SmoothCursorBlue\vcursor\6.\1\0\2\vtexthl\21SmoothCursorAqua\vcursor\b•\1\0\2\vtexthl\22SmoothCursorGreen\vcursor\b●\1\0\2\vtexthl\23SmoothCursorYellow\vcursor\b●\1\0\2\vtexthl\23SmoothCursorOrange\vcursor\b●\1\0\2\vtexthl\20SmoothCursorRed\vcursor\b●\thead\1\0\2\vcursor\b▷\vtexthl\17SmoothCursor\1\0\1\venable\2\1\0\t\14threshold\3\3\ttype\fdefault\rpriority\3\n\14intervals\3#\nspeed\3\25\ftimeout\3�\23\vtexthl\17SmoothCursor\vcursor\b\14autostart\2\nsetup\17smoothcursor\frequire\0", "config", "SmoothCursor.nvim")
+time([[Config for SmoothCursor.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

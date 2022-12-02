@@ -5,6 +5,11 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+
+  -- Get use declarations from WIP plugins list
+  --require('main.WIP.plugins').use_wip_plugins(use)
+  use 'ahollister/telescopenotes.nvim'
+
   -- LSP stuff
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
@@ -22,7 +27,7 @@ return require('packer').startup(function(use)
   use 'PeterRincker/vim-searchlight'
   use 'folke/tokyonight.nvim'
   use 'npxbr/gruvbox.nvim'
-  -- use 'pineapplegiant/spaceduck'
+  -- -- use 'pineapplegiant/spaceduck'
   use 'ahollister/spacebun'
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -36,7 +41,37 @@ return require('packer').startup(function(use)
     run = ':TSUpdate'
   }
   use 'psliwka/vim-smoothie'
-  use "numToStr/FTerm.nvim"
+  use { 'gen740/SmoothCursor.nvim',
+    config = function()
+      require('smoothcursor').setup({
+        autostart = true,
+        cursor = "▷", -- cursor shape (need nerd font)
+        texthl = "SmoothCursor", -- highlight group, default is { bg = nil, fg = "#FFD400" }
+        linehl = nil, -- highlight sub-cursor line like 'cursorline', "CursorLine" recommended
+        type = "default", -- define cursor movement calculate function, "default" or "exp" (exponential).
+        fancy = {
+          enable = true, -- enable fancy mode
+          head = { cursor = "▷", texthl = "SmoothCursor", linehl = nil },
+          body = {
+            { cursor = ".", texthl = "SmoothCursorRed" },
+            { cursor = ".", texthl = "SmoothCursorOrange" },
+            { cursor = ".", texthl = "SmoothCursorYellow" },
+            { cursor = ".", texthl = "SmoothCursorGreen" },
+            { cursor = ".", texthl = "SmoothCursorAqua" },
+            { cursor = ".", texthl = "SmoothCursorBlue" },
+            { cursor = ".", texthl = "SmoothCursorPurple" },
+          },
+          tail = { cursor = nil, texthl = "SmoothCursor" }
+        },
+        speed = 25, -- max is 100 to stick to your current position
+        intervals = 35, -- tick interval
+        priority = 10, -- set marker priority
+        timeout = 3000, -- timout for animation
+        threshold = 3, -- animate if threshold lines jump
+        disabled_filetypes = nil, -- this option will be skipped if enabled_filetypes is set. example: {
+      })
+    end
+  }
   use {
     "AckslD/nvim-neoclip.lua",
     requires = {

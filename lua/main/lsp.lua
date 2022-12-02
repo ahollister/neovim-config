@@ -32,6 +32,8 @@ nnoremap("<leader>fw", function() require("telescope.builtin").grep_string({ sea
 
 -- js, ts etc.
 require 'lspconfig'.eslint.setup {}
+-- PHP
+require 'lspconfig'.intelephense.setup {}
 -- require 'lspconfig'.tsserver.setup {
 --     on_attach = require("lsp-format").on_attach
 -- }
