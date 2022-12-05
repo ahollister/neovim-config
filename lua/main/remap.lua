@@ -17,6 +17,11 @@ nnoremap("<C-k>", "<cmd>m .-2<CR>==", silent)
 nnoremap("<C-j>", "<cmd>m .+1<CR>==", silent)
 inoremap("<C-k>", "<cmd>m .-2<CR>")
 inoremap("<C-j>", "<cmd>m .+1<CR>")
+-- So I can move around in insert (Alt + hjkl)
+inoremap("˚", "<Up>")
+inoremap("∆", "<Down>")
+inoremap("˙", "<Left>")
+inoremap("¬", "<Right>")
 -- Telescope Neoclip
 nnoremap("<leader>v", "<cmd>Telescope neoclip<CR>", silent)
 -- Treesitter
