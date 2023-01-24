@@ -6,6 +6,8 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
+  use 'nvim-tree/nvim-tree.lua'
+
   -- Get use declarations from WIP plugins list
   --require('main.WIP.plugins').use_wip_plugins(use)
   use 'ahollister/telescopenotes.nvim'
@@ -53,13 +55,13 @@ return require('packer').startup(function(use)
           enable = true, -- enable fancy mode
           head = { cursor = "▷", texthl = "SmoothCursor", linehl = nil },
           body = {
-            { cursor = ".", texthl = "SmoothCursorRed" },
-            { cursor = ".", texthl = "SmoothCursorOrange" },
-            { cursor = ".", texthl = "SmoothCursorYellow" },
-            { cursor = ".", texthl = "SmoothCursorGreen" },
-            { cursor = ".", texthl = "SmoothCursorAqua" },
-            { cursor = ".", texthl = "SmoothCursorBlue" },
-            { cursor = ".", texthl = "SmoothCursorPurple" },
+            { cursor = "●", texthl = "SmoothCursorRed" },
+            { cursor = "●", texthl = "SmoothCursorOrange" },
+            { cursor = "●", texthl = "SmoothCursorYellow" },
+            { cursor = "●", texthl = "SmoothCursorGreen" },
+            { cursor = "●", texthl = "SmoothCursorAqua" },
+            { cursor = "●", texthl = "SmoothCursorBlue" },
+            { cursor = "●", texthl = "SmoothCursorPurple" },
           },
           tail = { cursor = nil, texthl = "SmoothCursor" }
         },
@@ -87,4 +89,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'airblade/vim-gitgutter'
   use 'xiyaowong/nvim-transparent'
+  use({
+    'terror/chatgpt.nvim',
+    run = 'pip3 install -r requirements.txt'
+  })
 end)

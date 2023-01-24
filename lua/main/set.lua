@@ -1,3 +1,7 @@
+-- disable netrw at the very start of your init.lua (strongly advised) - NVIM TREE
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.opt.guicursor = {
     "n-v:block",
     "i-c-ci-ve:ver25",
@@ -7,9 +11,14 @@ vim.opt.guicursor = {
     "sm:block-blinkwait175-blinkoff150-blinkon175",
 }
 
+vim.opt.undofile = true
+vim.opt.undodir = '/tmp'
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.numberwidth = 1
+
+vim.opt.mouse = ""
 
 vim.opt.errorbells = false
 
@@ -48,3 +57,8 @@ vim.g.mapleader = " "
 vim.opt.listchars = { tab = '>-', trail = '~', space = '·', eol = '↵' }
 
 vim.opt.whichwrap = '<,>,h,l,[,]'
+
+
+vim.opt.foldlevel = 20
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

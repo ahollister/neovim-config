@@ -10,8 +10,9 @@ nnoremap("<leader>s", "<cmd>w<CR>", silent)
 nnoremap("<leader>b", "<cmd>Ex<CR>", silent)
 nnoremap("<leader>R", "\"_diwP<CR>", silent)
 nnoremap("<leader>r", "\"_diwp<CR>", silent)
--- Open terminal instance
-nnoremap("<leader>tt", "<CMD>lua require(\"FTerm\").toggle()<CR>", silent)
+-- Open and close nvimtree file explorer based on current state
+nnoremap("<leader>b", "<cmd>:NvimTreeToggle <CR>")
+nnoremap("<leader>ff", "<cmd>:NvimTreeFindFileToggle <CR>")
 -- Move lines
 nnoremap("<C-k>", "<cmd>m .-2<CR>==", silent)
 nnoremap("<C-j>", "<cmd>m .+1<CR>==", silent)

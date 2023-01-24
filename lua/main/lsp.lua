@@ -30,6 +30,19 @@ nnoremap("<leader>fb", builtin.buffers)
 -- Telescope find word under cursor
 nnoremap("<leader>fw", function() require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") }) end)
 
+-- cssls
+require 'lspconfig'.cssls.setup {
+    settings = {
+        css = {
+            validate = false,
+            lint = {
+                unknownAtRules = 'ignore',
+            },
+        },
+    },
+}
+require 'lspconfig'.cssmodules_ls.setup {}
+require 'lspconfig'.tailwindcss.setup {}
 -- js, ts etc.
 require 'lspconfig'.eslint.setup {}
 -- PHP

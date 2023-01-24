@@ -20,6 +20,10 @@ local cmp = require 'cmp'
 cmp.setup {
     snippet = {
         expand = function(args)
+            local luasnip = require("luasnip")
+            if not luasnip then
+                return
+            end
             luasnip.lsp_expand(args.body)
         end,
     },
@@ -53,5 +57,6 @@ cmp.setup {
     sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'copilot' },
     },
 }
