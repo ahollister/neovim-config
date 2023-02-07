@@ -1,3 +1,6 @@
+-- FORMATTER - WIP
+------------
+
 -- Utilities for creating configurations
 local util = require "formatter.util"
 

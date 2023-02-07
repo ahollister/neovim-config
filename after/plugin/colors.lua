@@ -1,12 +1,14 @@
 -- COLORS
 ---------
 
+-- Theme customizations
 require("rose-pine").setup({
     disable_background = true,
     disable_italics = true,
     dark_variant = 'moon',
 })
 
+-- Runs on start
 function ManageColors(color)
 	-- Set color with a default of rose-pine
 	color = color or "rose-pine"

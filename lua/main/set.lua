@@ -56,7 +56,7 @@ vim.opt.updatetime = 50
 vim.g.mapleader = " "
 
 -- Whitespace chars
-vim.opt.listchars = { tab = '>-', trail = '~', space = '·', eol = '↵' }
-vim.opt.whichwrap = '<,>,h,l,[,]'
+vim.opt.listchars = { tab = ">-", trail = "~", space = "·", eol = "↵" }
+vim.opt.whichwrap = "<,>,h,l,[,]"
 
 

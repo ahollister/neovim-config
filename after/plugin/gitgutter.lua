@@ -1,4 +1,4 @@
--- GitGutter
+-- GITGUTTER
 ------------
 
 -- Keybindings
