@@ -82,6 +82,12 @@ return require("packer").startup(function(use)
     -- Fidget
     use ("j-hui/fidget.nvim")
 
+    -- Lualine
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+
 	-- GitGutter
 	use ("airblade/vim-gitgutter")
 
