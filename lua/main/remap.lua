@@ -23,3 +23,5 @@ vim.keymap.set("n", "<leader>c", function()
     end
 end)
 
+-- Re-source NVIM
+vim.keymap.set("n", "<leader>r", ":luafile $MYVIMRC<CR>")

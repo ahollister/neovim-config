@@ -23,15 +23,28 @@ return require("packer").startup(function(use)
 	use ({
 		"AckslD/nvim-neoclip.lua",
 		requires = {
-			{"nvim-telescope/telescope.nvim"},
+			{
+                "nvim-telescope/telescope.nvim"
+            },
+            {
+                "kkharji/sqlite.lua",
+                module = "sqlite"
+            },
 		},
 		config = function()
-			require("neoclip").setup()
+			require("neoclip").setup({
+                enable_persistent_history = true
+            })
 		end,
 	})
 
 	-- Treesitter
-	use ("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+	use (
+        "nvim-treesitter/nvim-treesitter",
+        {
+            run = ":TSUpdate"
+        }
+    )
 	use ("nvim-treesitter/playground")
 
 	-- Harpoon
@@ -51,6 +64,9 @@ return require("packer").startup(function(use)
 
     -- Github Copilot
     use ("github/copilot.vim")
+
+    -- Surround
+    use ("tpope/vim-surround")
 
 	-- LSP
 	use ({
@@ -85,7 +101,10 @@ return require("packer").startup(function(use)
     -- Lualine
     use {
         "nvim-lualine/lualine.nvim",
-        requires = { "kyazdani42/nvim-web-devicons", opt = true }
+        requires = {
+            "kyazdani42/nvim-web-devicons",
+            opt = true
+        }
     }
 
 	-- GitGutter
