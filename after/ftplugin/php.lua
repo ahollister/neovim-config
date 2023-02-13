@@ -1,9 +1,5 @@
--- JAVASCRIPT
--------------
-
--- JavaScript specific keymappings
-vim.keymap.set("n", "<leader>lw", [[viwdi<SPACE>console.log(<c-r>")<esc>]])
-vim.keymap.set("v", "<leader>;", [[di<SPACE>console.log(<c-r>")<esc>]])
+-- PHP
+------
 
 -- Runs after each file save on BufWritePost event.
 vim.api.nvim_create_autocmd("BufWritePost", {
