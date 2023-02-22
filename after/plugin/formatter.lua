@@ -1,4 +1,4 @@
--- FORMATTER - WIP
+-- FORMATTER
 ------------
 
 -- Keymap to format
@@ -7,15 +7,70 @@ vim.keymap.set("n", "<leader>ff", "<cmd>Format<CR>", { noremap = true, silent = 
 -- Utilities for creating configurations
 local util = require("formatter.util")
 
--- filetype config for prettier
+-- LUA formatter
+----------------
+local lua_config = {
+	-- "formatter.filetypes.lua" defines default configurations for the "lua" filetype
+	require("formatter.filetypes.lua").stylua,
+
+	-- You can also define your own configuration
+	function()
+		-- Supports conditional formatting
+		if util.get_current_buffer_file_name() == "special.lua" then
+			return nil
+		end
+
+		-- Full specification of configurations is down below and in Vim help
+		-- files
+		return {
+			exe = "stylua",
+			args = {
+				"--search-parent-directories",
+				"--stdin-filepath",
+				util.escape_path(util.get_current_buffer_file_path()),
+				"--",
+				"-",
+			},
+			stdin = true,
+		}
+	end,
+}
+
+-- Prettier formatter
+---------------------
 local prettier_config = {
 	function()
 		return {
 			exe = "prettier",
-			args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0) },
+			args = {
+				"--config-precedence",
+				"prefer-file",
+				"--print-width",
+				vim.bo.textwidth,
+				"--stdin-filepath",
+				vim.fn.shellescape(vim.api.nvim_buf_get_name(0)),
+			},
 			stdin = true,
 		}
 	end,
+}
+
+local php_config = {
+	function()
+		return {
+			exe = "composer run lint:phpcbf",
+			args = {
+				util.escape_path(util.get_current_buffer_file_path()),
+			},
+			stdin = true,
+			ignore_exitcode = true,
+		}
+	end,
+}
+
+local all_config = {
+	-- "formatter.filetypes.any" defines default configurations for any filetype
+	require("formatter.filetypes.any").remove_trailing_whitespace,
 }
 
 -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
@@ -24,8 +79,10 @@ require("formatter").setup({
 	logging = true,
 	-- Set the log level
 	log_level = vim.log.levels.WARN,
-	-- All formatter configurations are opt-in
+	-- Formatter config by filetype
 	filetype = {
+		-- PRETTIER
+		css = prettier_config,
 		javascript = prettier_config,
 		javascriptreact = prettier_config,
 		json = prettier_config,
@@ -39,52 +96,13 @@ require("formatter").setup({
 		["json-to-graphql-variables-mutation"] = prettier_config,
 		["json-to-graphql-variables-query"] = prettier_config,
 
-		-- Formatter configurations for filetype "lua" go here
-		-- and will be executed in order
-		lua = {
-			-- "formatter.filetypes.lua" defines default configurations for the
-			-- "lua" filetype
-			require("formatter.filetypes.lua").stylua,
+		-- LUA
+		lua = lua_config,
 
-			-- You can also define your own configuration
-			function()
-				-- Supports conditional formatting
-				if util.get_current_buffer_file_name() == "special.lua" then
-					return nil
-				end
+		-- PHP
+		php = php_config,
 
-				-- Full specification of configurations is down below and in Vim help
-				-- files
-				return {
-					exe = "stylua",
-					args = {
-						"--search-parent-directories",
-						"--stdin-filepath",
-						util.escape_path(util.get_current_buffer_file_path()),
-						"--",
-						"-",
-					},
-					stdin = true,
-				}
-			end,
-		},
-
-		-- php = {
-		-- 	function()
-		-- 		return {
-		-- 			exe = "composer run lint:phpcbf",
-		-- 			stdin = true,
-		-- 			ignore_exitcode = true,
-		-- 		}
-		-- 	end,
-		-- },
-
-		-- Use the special "*" filetype for defining formatter configurations on
-		-- any filetype
-		["*"] = {
-			-- "formatter.filetypes.any" defines default configurations for any
-			-- filetype
-			require("formatter.filetypes.any").remove_trailing_whitespace,
-		},
+		-- All
+		["*"] = all_config,
 	},
 })

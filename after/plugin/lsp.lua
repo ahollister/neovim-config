@@ -9,7 +9,7 @@ lsp.preset("recommended")
 lsp.ensure_installed({
 	"tsserver",
 	"eslint",
-	"sumneko_lua",
+	"lua_ls",
 	"intelephense",
 	"cssls",
 	"cssmodules_ls",
@@ -70,4 +70,16 @@ lsp.setup()
 
 vim.diagnostic.config({
 	virtual_text = true,
+})
+
+-- cssls
+require("lspconfig").cssls.setup({
+	settings = {
+		css = {
+			validate = false,
+			lint = {
+				unknownAtRules = "ignore",
+			},
+		},
+	},
 })
