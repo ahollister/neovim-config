@@ -2,7 +2,7 @@
 ---------------
 
 --Netrw
-vim.g.netrw_liststyle = 3
+vim.g.netrw_liststyle = 1
 
 -- Line numbers
 vim.opt.nu = true

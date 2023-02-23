@@ -24,11 +24,6 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	-- Telescope File Browser
-	use({
-		"nvim-telescope/telescope-file-browser.nvim",
-	})
-
 	-- Neoclip
 	use({
 		"AckslD/nvim-neoclip.lua",
@@ -102,8 +97,45 @@ return require("packer").startup(function(use)
 	-- Formatter
 	use("mhartington/formatter.nvim")
 
+	-- Smart Column
+	use({
+		"m4xshen/smartcolumn.nvim",
+		config = function()
+			require("smartcolumn").setup({
+				disabled_filetypes = { "help", "text", "markdown", "netrw" },
+			})
+		end,
+	})
+
+	-- Toggleterm
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+		config = function()
+			require("toggleterm").setup({
+				direction = "float",
+				float_opts = {
+					border = "curved",
+				},
+			})
+		end,
+	})
+
 	-- Fidget
-	use("j-hui/fidget.nvim")
+	use({
+		"j-hui/fidget.nvim",
+		config = function()
+			require("fidget").setup({
+				text = {
+					spinner = "bouncing_ball",
+				},
+				window = {
+					border = "rounded",
+					blend = 0,
+				},
+			})
+		end,
+	})
 
 	-- Lualine
 	use({
@@ -134,5 +166,16 @@ return require("packer").startup(function(use)
 			require("rose-pine").setup()
 			vim.cmd("colorscheme rose-pine")
 		end,
+	})
+
+	-- Colorscheme - Zenbones
+	use({
+		"mcchrish/zenbones.nvim",
+		requires = "rktjmp/lush.nvim",
+	})
+
+	-- Colorscheme - meh
+	use({
+		"davidosomething/vim-colors-meh",
 	})
 end)

@@ -55,6 +55,8 @@ local prettier_config = {
 	end,
 }
 
+-- PHP formatter
+----------------
 local php_config = {
 	function()
 		return {
@@ -68,8 +70,9 @@ local php_config = {
 	end,
 }
 
+-- Generic formatter
+--------------------
 local all_config = {
-	-- "formatter.filetypes.any" defines default configurations for any filetype
 	require("formatter.filetypes.any").remove_trailing_whitespace,
 }
 
