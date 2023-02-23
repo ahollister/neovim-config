@@ -1,15 +1,16 @@
-require'nvim-treesitter.configs'.setup {
+-- TREESITTER CONFIG
+--------------------
+
+require("nvim-treesitter.configs").setup {
   -- A list of parser names, or "all"
-  ensure_installed = "all",
+  ensure_installed = { "help", "javascript", "typescript", "php", "lua", "vim" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
 
   -- Automatically install missing parsers when entering buffer
+  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = true,
-
-  ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
 
   highlight = {
     -- `false` will disable the whole extension
@@ -20,9 +21,5 @@ require'nvim-treesitter.configs'.setup {
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
-    -- ts-autotag plugin enable
   },
-  autotag = {
-    enable = true,
-  }
 }

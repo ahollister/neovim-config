@@ -1,64 +1,64 @@
--- disable netrw at the very start of your init.lua (strongly advised) - NVIM TREE
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- VIM SETTINGS
+---------------
 
-vim.opt.guicursor = {
-    "n-v:block",
-    "i-c-ci-ve:ver25",
-    "r-cr:hor20",
-    "o:hor50",
-    "i:blinkwait100-blinkoff300-blinkon250-Cursor/lCursor",
-    "sm:block-blinkwait175-blinkoff150-blinkon175",
-}
+--Netrw
+vim.g.netrw_liststyle = 3
 
-vim.opt.undofile = true
-vim.opt.undodir = '/tmp'
-
+-- Line numbers
 vim.opt.nu = true
+
+-- Relative line numbers
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
+
+-- Width of numbers
 vim.opt.numberwidth = 1
 
-vim.opt.mouse = ""
-
+-- Disable error bells
 vim.opt.errorbells = false
 
+-- Tabs widths
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+
+-- Use spaces for indents
 vim.opt.expandtab = true
 
+-- Smart auto indenting
 vim.opt.smartindent = true
 
+-- Don't line wrap
 vim.opt.wrap = false
 
+-- Don't highlight all search matches, but use incremental highlight
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
+
 -- Default to case insensitive search
 vim.opt.ignorecase = true
+
 -- Use case sensitive search if pattern includes uppercase letter
 vim.opt.smartcase = true
 
+-- Better colors
 vim.opt.termguicolors = true
 
+-- Attempts to keep cursor in center of screen
 vim.opt.scrolloff = 999
+
+-- Keep a left hand column for error icons etc.
 vim.opt.signcolumn = "yes"
 
 -- Give more space for displaying messages.
 vim.opt.cmdheight = 1
 
--- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
--- delays and poor user experience.
+-- Make fast!
 vim.opt.updatetime = 50
 
 -- Set leader key
 vim.g.mapleader = " "
 
 -- Whitespace chars
-vim.opt.listchars = { tab = '>-', trail = '~', space = '·', eol = '↵' }
-
-vim.opt.whichwrap = '<,>,h,l,[,]'
-
-
-vim.opt.foldlevel = 20
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.listchars = { tab = ">-", trail = "~", space = "·", eol = "↵" }
+vim.opt.whichwrap = "<,>,h,l,[,]"
