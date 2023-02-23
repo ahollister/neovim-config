@@ -1,11 +1,15 @@
 -- VIM SETTINGS
 ---------------
 
+--Netrw
+vim.g.netrw_liststyle = 3
+
 -- Line numbers
 vim.opt.nu = true
 
 -- Relative line numbers
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
 
 -- Width of numbers
 vim.opt.numberwidth = 1
@@ -58,5 +62,3 @@ vim.g.mapleader = " "
 -- Whitespace chars
 vim.opt.listchars = { tab = ">-", trail = "~", space = "·", eol = "↵" }
 vim.opt.whichwrap = "<,>,h,l,[,]"
-
-
