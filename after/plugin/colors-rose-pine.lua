@@ -10,8 +10,8 @@ require("rose-pine").setup({
 	bold_vert_split = true,
 	-- Change specific vim highlight groups
 	highlight_groups = {
-		TelescopePromptBorder = { fg = "rose" },
-		TelescopeResultsBorder = { fg = "rose" },
-		TelescopePreviewBorder = { fg = "rose" },
+		TelescopePromptBorder = { fg = "muted" },
+		TelescopeResultsBorder = { fg = "muted" },
+		TelescopePreviewBorder = { fg = "muted" },
 	},
 })
