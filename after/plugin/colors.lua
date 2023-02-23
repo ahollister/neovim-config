@@ -20,7 +20,7 @@ function ManageColors(color)
 	-- TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
 	-- TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
 	-- TelescopePreviewBorder = { bg = colors.mantle, fg = colors.mantle },
-	vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE", fg = "#777777" })
+	vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE", fg = "#555555" })
 	vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "NONE", fg = "#ffffff" })
 	vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
 	vim.api.nvim_set_hl(0, "Normal", { fg = "#ffffff" })
