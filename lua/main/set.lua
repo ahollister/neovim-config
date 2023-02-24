@@ -31,7 +31,13 @@ vim.opt.smartindent = true
 -- Don't line wrap
 vim.opt.wrap = false
 
--- Don't highlight all search matches, but use incremental highlight
+-- Use system clipboard
+vim.opt.clipboard = "unnamedplus"
+
+-- complete the longest common match, tab the results to fully complete them
+vim.opt.wildmode = "longest:full,full"
+
+-- Highlight all search matches, use incremental highlight
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
@@ -52,6 +58,12 @@ vim.opt.signcolumn = "yes"
 
 -- Give more space for displaying messages.
 vim.opt.cmdheight = 1
+
+-- Persistent undo
+vim.opt.undofile = true
+
+-- Improve sidescroll
+vim.opt.sidescroll = 1
 
 -- Make fast!
 vim.opt.updatetime = 50

@@ -22,3 +22,14 @@ vim.keymap.set("n", "<leader>c", function()
 		vim.api.nvim_set_option("cmdheight", 1)
 	end
 end)
+
+-- Paste replace visual selection without copying it
+vim.keymap.set("v", "p", '"_dP')
+
+-- Move lines up and down
+vim.keymap.set("i", "<C-j>", "<Esc>:move .+1<CR>==gi")
+vim.keymap.set("i", "<C-k>", "<Esc>:move .-2<CR>==gi")
+vim.keymap.set("n", "<C-j>", ":move .+1<CR>==")
+vim.keymap.set("n", "<C-k>", ":move .-2<CR>==")
+vim.keymap.set("v", "<C-j>", ":move '>+1<CR>gv=gv")
+vim.keymap.set("v", "<C-k>", ":move '<-2<CR>gv=gv")

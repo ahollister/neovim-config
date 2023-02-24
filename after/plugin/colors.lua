@@ -38,7 +38,7 @@ function ManageColors(color)
 	vim.api.nvim_set_hl(0, "Normal", { fg = "#ffffff" })
 
 	-- UI vertsplit
-	vim.api.nvim_set_hl(0, "VertSplit", { fg = "#888888" })
+	vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#888888" })
 
 	-- GitGutter
 	vim.api.nvim_set_hl(0, "GitGutterAdd", { bg = "NONE", fg = "#88bd53" })

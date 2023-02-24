@@ -17,11 +17,6 @@ return require("packer").startup(function(use)
 				"nvim-lua/plenary.nvim",
 			},
 		},
-		file_browser = {
-			theme = "ivy",
-			-- disables netrw and use telescope-file-browser in its place
-			hijack_netrw = true,
-		},
 	})
 
 	-- Neoclip
@@ -47,7 +42,15 @@ return require("packer").startup(function(use)
 	use("nvim-treesitter/nvim-treesitter", {
 		run = ":TSUpdate",
 	})
+
 	use("nvim-treesitter/playground")
+
+	-- JSX Autotag
+	use("windwp/nvim-ts-autotag", {
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	})
 
 	-- Harpoon
 	use("theprimeagen/harpoon")
