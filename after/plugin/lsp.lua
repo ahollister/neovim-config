@@ -20,10 +20,10 @@ lsp.ensure_installed({
 	"tailwindcss",
 })
 
--- Configure lua language server for neovim (gets rid of global variable warnings)
+-- Configure lua language server for neovim (fix global variable warnings)
 lsp.nvim_workspace()
 
--- On attach, if there's an LSP to use, use LSP features, otherwise default to vim defaults
+-- On attach, if there's an LSP to use, use it, otherwise vim defaults
 lsp.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 

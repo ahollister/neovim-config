@@ -2,7 +2,10 @@
 ------------
 
 -- Keymap to format
-vim.keymap.set("n", "<leader>ff", "<cmd>Format<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ff", "<cmd>Format<CR>", {
+	noremap = true,
+	silent = true,
+})
 
 -- Utilities for creating configurations
 local util = require("formatter.util")
@@ -10,7 +13,7 @@ local util = require("formatter.util")
 -- LUA formatter
 ----------------
 local lua_config = {
-	-- "formatter.filetypes.lua" defines default configurations for the "lua" filetype
+	-- "formatter.filetypes.lua" defines default configurations for lua
 	require("formatter.filetypes.lua").stylua,
 
 	-- You can also define your own configuration

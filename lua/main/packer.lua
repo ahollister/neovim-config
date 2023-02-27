@@ -73,6 +73,9 @@ return require("packer").startup(function(use)
 	-- Surround
 	use("tpope/vim-surround")
 
+	-- Wilder
+	use("gelguy/wilder.nvim")
+
 	-- LSP
 	use({
 		"VonHeikemen/lsp-zero.nvim",
@@ -151,6 +154,9 @@ return require("packer").startup(function(use)
 
 	-- GitGutter
 	use("airblade/vim-gitgutter")
+
+	-- Vim Cool
+	use("romainl/vim-cool")
 
 	-- Transparent - allows for toggle
 	use("xiyaowong/nvim-transparent")

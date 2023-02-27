@@ -4,6 +4,9 @@
 -- Toggle NETRW
 vim.keymap.set("n", "<leader>b", ":Ex<CR>")
 
+-- Remap command mode to ; (: still works, default ; is meh)
+vim.keymap.set("n", ";", ":")
+
 -- Write buffer
 vim.keymap.set("n", "<leader>s", ":w<CR>")
 
