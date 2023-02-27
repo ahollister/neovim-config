@@ -24,10 +24,18 @@ function ManageColors(color)
 	color = color or default
 	vim.cmd.colorscheme(color)
 
+	-- Fix Fidget color
+	vim.api.nvim_set_hl(0, "FidgetTask", { bg = "NONE", fg = "#ffffff" })
+	vim.api.nvim_set_hl(0, "FidgetTitle", { bg = "NONE", fg = "#ffffff" })
+
 	-- Manage Transparency
 	vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+	vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
 	vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "NONE" })
+
+	-- Fixes Wilder command view
+	vim.api.nvim_set_hl(0, "dkoBgLight", { bg = "NONE" })
 
 	-- Line numbers
 	vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE", fg = "#555555" })
