@@ -10,14 +10,16 @@ telescope.setup({
 				"rg",
 				"--files",
 				"--hidden",
-				"-g",
+				"--glob",
 				"!.git",
-				"!.node_modules",
+				"--glob",
+				"!node_modules",
 			},
 		},
 	},
 })
 
+-- Keymaps
 local builtin = require("telescope.builtin")
 
 -- Find file name in project
