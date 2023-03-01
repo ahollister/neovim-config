@@ -29,6 +29,9 @@ end)
 -- Paste replace visual selection without copying it
 vim.keymap.set("v", "p", '"_dP')
 
+-- Run current line as shell command, replace with output
+vim.keymap.set("n", "Q", "!!zsh<CR>")
+
 -- Move lines up and down
 vim.keymap.set("i", "<C-j>", "<Esc>:move .+1<CR>==gi")
 vim.keymap.set("i", "<C-k>", "<Esc>:move .-2<CR>==gi")
@@ -36,3 +39,13 @@ vim.keymap.set("n", "<C-j>", ":move .+1<CR>==")
 vim.keymap.set("n", "<C-k>", ":move .-2<CR>==")
 vim.keymap.set("v", "<C-j>", ":move '>+1<CR>gv=gv")
 vim.keymap.set("v", "<C-k>", ":move '<-2<CR>gv=gv")
+
+-- Disable arrow keys
+vim.keymap.set("n", "<Left>", ":echo 'Use h'<CR>")
+vim.keymap.set("n", "<Right>", ":echo 'Use l'<CR>")
+vim.keymap.set("n", "<Up>", ":echo 'Use k'<CR>")
+vim.keymap.set("n", "<Down>", ":echo 'Use j'<CR>")
+vim.keymap.set("i", "<Left>", "<ESC>:echo 'Use h'<CR>")
+vim.keymap.set("i", "<Right>", "<ESC>:echo 'Use l'<CR>")
+vim.keymap.set("i", "<Up>", "<ESC>:echo 'Use k'<CR>")
+vim.keymap.set("i", "<Down>", "<ESC>:echo 'Use j'<CR>")

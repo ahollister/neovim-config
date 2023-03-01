@@ -1,5 +1,22 @@
 -- TELESCOPE
 ------------
+local telescope = require("telescope")
+
+-- Configure telescope to search hidden files, (except .git and .node_modules)
+telescope.setup({
+	pickers = {
+		find_files = {
+			find_command = {
+				"rg",
+				"--files",
+				"--hidden",
+				"-g",
+				"!.git",
+				"!.node_modules",
+			},
+		},
+	},
+})
 
 local builtin = require("telescope.builtin")
 
@@ -9,7 +26,7 @@ vim.keymap.set("n", "<leader>fs", builtin.find_files, {})
 vim.keymap.set("n", "<leader>gs", builtin.git_files, {})
 -- String search across project (RIPGrep)
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
--- Use Telescope to view help documentation
+-- Use to view help documentation
 vim.keymap.set("n", "<leader>h", builtin.help_tags, {})
 -- View recently opened files
 vim.keymap.set("n", "<leader>fo", builtin.oldfiles, {})

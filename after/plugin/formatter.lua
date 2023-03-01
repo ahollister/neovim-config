@@ -91,6 +91,8 @@ require("formatter").setup({
 		css = prettier_config,
 		javascript = prettier_config,
 		javascriptreact = prettier_config,
+		typescriptreact = prettier_config,
+		typescript = prettier_config,
 		json = prettier_config,
 		["jsonc"] = prettier_config,
 		["json5"] = prettier_config,

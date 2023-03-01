@@ -136,7 +136,7 @@ return require("packer").startup(function(use)
 					spinner = "bouncing_ball",
 				},
 				window = {
-					border = "rounded",
+					border = "shadow",
 					blend = 0,
 				},
 			})
