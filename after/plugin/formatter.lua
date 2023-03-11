@@ -42,18 +42,29 @@ local lua_config = {
 -- Prettier formatter
 ---------------------
 local prettier_config = {
-	function()
+	function(parser)
+		if not parser then
+			return {
+				exe = "prettier",
+				args = {
+					"--stdin-filepath",
+					util.escape_path(util.get_current_buffer_file_path()),
+				},
+				stdin = true,
+				try_node_modules = true,
+			}
+		end
+
 		return {
 			exe = "prettier",
 			args = {
-				"--config-precedence",
-				"prefer-file",
-				"--print-width",
-				vim.bo.textwidth,
 				"--stdin-filepath",
-				vim.fn.shellescape(vim.api.nvim_buf_get_name(0)),
+				util.escape_path(util.get_current_buffer_file_path()),
+				"--parser",
+				parser,
 			},
 			stdin = true,
+			try_node_modules = true,
 		}
 	end,
 }

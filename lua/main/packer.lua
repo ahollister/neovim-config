@@ -38,6 +38,19 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- Telescope Advanced Git Search
+	use({
+		"aaronhallaert/ts-advanced-git-search.nvim",
+		config = function()
+			require("telescope").load_extension("advanced_git_search")
+		end,
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			-- to show diff splits and open commits in browser
+			"tpope/vim-fugitive",
+		},
+	})
+
 	-- Treesitter
 	use("nvim-treesitter/nvim-treesitter", {
 		run = ":TSUpdate",
@@ -108,7 +121,14 @@ return require("packer").startup(function(use)
 		"m4xshen/smartcolumn.nvim",
 		config = function()
 			require("smartcolumn").setup({
-				disabled_filetypes = { "help", "text", "markdown", "netrw" },
+				disabled_filetypes = {
+					"help",
+					"text",
+					"markdown",
+					"netrw",
+					"typescriptreact",
+					"php",
+				},
 			})
 		end,
 	})

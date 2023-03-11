@@ -1,24 +1,29 @@
 -- COLORS
 ---------
 
+-- See which colorschemes are available
+function PrintAvailableColors()
+	print("Available colors:")
+	print("rose-pine")
+	print("catppuccin")
+	print("zenbones")
+	print("tokyobones")
+	print("neobones")
+	print("rosebones")
+	print("seoulbones")
+	print("duckbones")
+	print("kanagawabones")
+	print("nordbones")
+	print("forestbones")
+	print("zenburned")
+	print("vimbones")
+	print("meh")
+end
+
 -- Runs on start
 function ManageColors(color)
-	-- AVAILABLE COLORS
-	-------------------
-	-- local default = "rose-pine"
-	-- local default = "catppuccin"
-	-- local default = "zenbones"
-	-- local default = "tokyobones"
-	-- local default = "neobones"
-	-- local default = "rosebones"
-	-- local default = "seoulbones"
-	-- local default = "duckbones"
-	-- local default = "kanagawabones"
-	-- local default = "nordbones"
-	-- local default = "forestbones"
-	-- local default = "zenburned"
-	-- local default = "vimbones"
-	local default = "meh"
+	local default = "catppuccin"
+	-- local default = "meh"
 
 	-- Set color, default to rose-pine if NONE provided
 	color = color or default
