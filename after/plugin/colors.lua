@@ -63,3 +63,12 @@ function ManageColors(color)
 end
 
 ManageColors()
+
+-- Quick functions for fave color schemes
+function Catppuccin()
+	ManageColors("catppuccin")
+end
+
+function Meh()
+	ManageColors("meh")
+end
