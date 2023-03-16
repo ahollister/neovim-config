@@ -128,6 +128,7 @@ return require("packer").startup(function(use)
 					"netrw",
 					"typescriptreact",
 					"php",
+					"sh",
 				},
 			})
 		end,

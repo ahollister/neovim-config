@@ -27,6 +27,7 @@ vim.opt.expandtab = true
 
 -- Smart auto indenting
 vim.opt.smartindent = true
+vim.opt.autoindent = true
 
 -- Don't line wrap
 vim.opt.wrap = false
