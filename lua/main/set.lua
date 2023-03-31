@@ -51,6 +51,9 @@ vim.opt.smartcase = true
 -- Better colors
 vim.opt.termguicolors = true
 
+-- Allow hidden unsaved buffers
+vim.opt.hidden = true
+
 -- Attempts to keep cursor in center of screen
 vim.opt.scrolloff = 999
 

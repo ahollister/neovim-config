@@ -119,7 +119,7 @@ require("formatter").setup({
 		lua = lua_config,
 
 		-- PHP
-		php = php_config,
+		-- php = php_config,
 
 		-- All
 		["*"] = all_config,
