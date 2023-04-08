@@ -19,25 +19,6 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	-- Neoclip
-	use({
-		"AckslD/nvim-neoclip.lua",
-		requires = {
-			{
-				"nvim-telescope/telescope.nvim",
-			},
-			{
-				"kkharji/sqlite.lua",
-				module = "sqlite",
-			},
-		},
-		config = function()
-			require("neoclip").setup({
-				enable_persistent_history = true,
-			})
-		end,
-	})
-
 	-- Telescope Advanced Git Search
 	use({
 		"aaronhallaert/ts-advanced-git-search.nvim",
