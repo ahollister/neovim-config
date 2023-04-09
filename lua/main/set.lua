@@ -3,6 +3,7 @@
 
 --Netrw
 vim.g.netrw_liststyle = 1
+vim.g.netrw_maxfilenamelen = 60
 
 -- Line numbers
 vim.opt.nu = true

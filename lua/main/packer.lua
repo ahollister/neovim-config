@@ -110,6 +110,8 @@ return require("packer").startup(function(use)
 					"typescriptreact",
 					"php",
 					"sh",
+					"tmux",
+					"lua",
 				},
 			})
 		end,
