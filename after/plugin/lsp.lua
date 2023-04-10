@@ -53,11 +53,11 @@ lsp.on_attach(function(client, bufnr)
 		vim.diagnostic.goto_prev()
 	end, opts)
 
-	vim.keymap.set("n", "<leader>vca", function()
+	vim.keymap.set("n", "<leader>ca", function()
 		vim.lsp.buf.code_action()
 	end, opts)
 
-	vim.keymap.set("n", "<leader>vrn", function()
+	vim.keymap.set("n", "<leader>rn", function()
 		vim.lsp.buf.rename()
 	end, opts)
 

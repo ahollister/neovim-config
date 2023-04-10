@@ -112,6 +112,7 @@ return require("packer").startup(function(use)
 					"sh",
 					"tmux",
 					"lua",
+					"zsh",
 				},
 			})
 		end,
@@ -140,7 +141,7 @@ return require("packer").startup(function(use)
 					spinner = "bouncing_ball",
 				},
 				window = {
-					border = "shadow",
+					border = "rounded",
 					blend = 0,
 				},
 			})
