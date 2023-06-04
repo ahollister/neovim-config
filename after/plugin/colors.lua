@@ -46,8 +46,8 @@ function ManageColors(color)
 
 	-- Line numbers
 	vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE", fg = "#70788a" })
-	vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "NONE", fg = "#bbbbbb" })
-	vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
+	vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#000000", fg = "#bbbbbb" })
+	vim.api.nvim_set_hl(0, "CursorLine", { bg = "#000000" })
 
 	-- Normal (command output text)
 	vim.api.nvim_set_hl(0, "Normal", { fg = "#ffffff" })

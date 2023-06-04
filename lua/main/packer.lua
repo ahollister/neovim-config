@@ -20,8 +20,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- Telescope Advanced Git Search
-	use({
-		"aaronhallaert/ts-advanced-git-search.nvim",
+	use("aaronhallaert/ts-advanced-git-search.nvim", {
 		config = function()
 			require("telescope").load_extension("advanced_git_search")
 		end,
@@ -32,12 +31,16 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	-- Goyo - centers text
+	use("junegunn/goyo.vim")
+
+	-- startuptime
+	use("dstein64/vim-startuptime")
+
 	-- Treesitter
 	use("nvim-treesitter/nvim-treesitter", {
 		run = ":TSUpdate",
 	})
-
-	use("nvim-treesitter/playground")
 
 	-- JSX Autotag
 	use("windwp/nvim-ts-autotag", {
@@ -67,8 +70,8 @@ return require("packer").startup(function(use)
 	-- Surround
 	use("tpope/vim-surround")
 
-	-- Wilder
-	use("gelguy/wilder.nvim")
+	-- Walh
+	use("casonadams/walh")
 
 	-- LSP
 	use({
@@ -104,6 +107,7 @@ return require("packer").startup(function(use)
 			require("smartcolumn").setup({
 				disabled_filetypes = {
 					"help",
+					"xhtml",
 					"text",
 					"markdown",
 					"netrw",
