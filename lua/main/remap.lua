@@ -4,6 +4,12 @@
 -- Toggle NETRW
 vim.keymap.set("n", "<leader>b", ":Ex<CR>")
 
+-- Move between splits
+vim.keymap.set("n", "<leader>w", "<C-w>")
+
+-- Kill split
+vim.keymap.set("n", "<leader>q", ":q<CR>")
+
 -- Remap command mode to ; (: still works, default ; is meh)
 vim.keymap.set("n", ";", ":")
 
@@ -14,7 +20,7 @@ vim.keymap.set("n", "<leader>s", ":w<CR>")
 vim.keymap.set("n", "<leader>n", ":set invnumber invrelativenumber<CR>")
 
 -- Toggle whitespace
-vim.keymap.set("n", "<leader>w", ":set list!<CR>")
+vim.keymap.set("n", "<leader>ws", ":set list!<CR>")
 
 -- Toggle cmdheight
 vim.keymap.set("n", "<leader>c", function()
