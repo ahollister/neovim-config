@@ -43,6 +43,11 @@ local lua_config = {
 ---------------------
 local prettier_config = {
 	function(parser)
+		-- Supports conditional formatting
+		-- if string.find(util.get_current_buffer_file_name(), ".min.") then
+		-- 	return nil
+		-- end
+
 		if not parser then
 			return {
 				exe = "prettier",
@@ -99,7 +104,7 @@ require("formatter").setup({
 	-- Formatter config by filetype
 	filetype = {
 		-- PRETTIER
-		css = prettier_config,
+		-- css = prettier_config,
 		javascript = prettier_config,
 		javascriptreact = prettier_config,
 		typescriptreact = prettier_config,

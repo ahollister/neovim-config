@@ -12,7 +12,6 @@ lsp.ensure_installed({
 	"lua_ls",
 	"intelephense",
 	"cssls",
-	"cssmodules_ls",
 	"bashls",
 	"graphql",
 	"html",

@@ -31,6 +31,9 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	-- Todo Comments
+	use("folke/todo-comments.nvim")
+
 	-- Goyo - centers text
 	use("junegunn/goyo.vim")
 
@@ -70,6 +73,37 @@ return require("packer").startup(function(use)
 	-- Surround
 	use("tpope/vim-surround")
 
+	-- Oil
+	use({
+		"stevearc/oil.nvim",
+		config = function()
+			require("oil").setup({
+				columns = {
+					"icon",
+					"permissions",
+					"size",
+					"mtime",
+				},
+				delete_to_trash = true,
+				trash_command = "trash",
+				view_options = {
+					-- Show files and directories that start with "."
+					show_hidden = true,
+				},
+				float = {
+					-- Padding around the floating window
+					padding = 2,
+					max_width = 0,
+					max_height = 0,
+					border = "rounded",
+					win_options = {
+						winblend = 0,
+					},
+				},
+			})
+		end,
+	})
+
 	-- Walh
 	use("casonadams/walh")
 
@@ -99,6 +133,16 @@ return require("packer").startup(function(use)
 
 	-- Formatter
 	use("mhartington/formatter.nvim")
+
+	-- devicons
+	use("nvim-tree/nvim-web-devicons")
+
+	-- Trouble
+	use("folke/trouble.nvim", {
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+	})
 
 	-- Smart Column
 	use({

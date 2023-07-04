@@ -29,6 +29,6 @@ vim.keymap.set("n", "<leader>gs", builtin.git_files, {})
 -- String search across project (RIPGrep)
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 -- Use to view help documentation
-vim.keymap.set("n", "<leader>h", builtin.help_tags, {})
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 -- View recently opened files
 vim.keymap.set("n", "<leader>fo", builtin.oldfiles, {})

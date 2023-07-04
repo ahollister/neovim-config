@@ -2,7 +2,7 @@
 ------
 
 -- CSS specific keymappings
-vim.keymap.set("n", "<leader>a", [[i@apply<esc>]])
+-- vim.keymap.set("n", "<leader>a", [[i@apply<esc>]])
 
 -- Runs after each file save on BufWritePost event.
 vim.api.nvim_create_autocmd("BufWritePost", {
