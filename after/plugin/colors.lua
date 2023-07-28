@@ -22,10 +22,9 @@ end
 
 -- Runs on start
 function ManageColors(color)
-	local default = "catppuccin"
+	local default = "catppuccin-mocha"
 	-- local default = "meh"
 
-	-- Set color, default to rose-pine if NONE provided
 	color = color or default
 	vim.cmd.colorscheme(color)
 

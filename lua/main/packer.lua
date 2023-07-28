@@ -40,6 +40,21 @@ return require("packer").startup(function(use)
 	-- startuptime
 	use("dstein64/vim-startuptime")
 
+	use({
+		"ashfinal/qfview.nvim",
+		config = function()
+			require("qfview").setup()
+		end,
+	})
+
+	-- guess tabs vs spaces
+	use({
+		"nmac427/guess-indent.nvim",
+		config = function()
+			require("guess-indent").setup({})
+		end,
+	})
+
 	-- Treesitter
 	use("nvim-treesitter/nvim-treesitter", {
 		run = ":TSUpdate",
@@ -106,6 +121,80 @@ return require("packer").startup(function(use)
 
 	-- Walh
 	use("casonadams/walh")
+
+	-- Obsidian note taking
+	use({
+		"epwalsh/obsidian.nvim",
+		config = function()
+			require("obsidian").setup({
+				dir = "~/wikis/work",
+				-- dir = "~/wikis/personal",
+				dependencies = {
+					"nvim-lua/plenary.nvim",
+					"nvim-telescope/telescope.nvim",
+				},
+				daily_notes = {
+					folder = "notes/dailies",
+					date_format = "%Y-%m-%d",
+				},
+				follow_url_func = function(url)
+					vim.fn.jobstart({ "open", url }) -- Mac OS
+				end,
+			})
+		end,
+	})
+
+	-- Lua
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require("which-key").setup({
+				window = {
+					border = "single",
+				},
+			})
+		end,
+	})
+
+	use({
+		"David-Kunz/treesitter-unit",
+		config = function()
+			vim.api.nvim_set_keymap("x", "iu", ':lua require"treesitter-unit".select()<CR>', { noremap = true })
+			vim.api.nvim_set_keymap("x", "au", ':lua require"treesitter-unit".select(true)<CR>', { noremap = true })
+			vim.api.nvim_set_keymap("o", "iu", ':<c-u>lua require"treesitter-unit".select()<CR>', { noremap = true })
+			vim.api.nvim_set_keymap(
+				"o",
+				"au",
+				':<c-u>lua require"treesitter-unit".select(true)<CR>',
+				{ noremap = true }
+			)
+		end,
+	})
+
+	use({
+		"nvimdev/lspsaga.nvim",
+		after = "nvim-lspconfig",
+		config = function()
+			require("lspsaga").setup({
+				lightbulb = {
+					enable = false,
+				},
+				symbol_in_winbar = {
+					enable = false,
+					color_mode = false,
+					folder_level = 2,
+				},
+				outline = {
+					left_width = 0.7,
+					win_width = 50,
+					close_after_jump = true,
+				},
+			})
+			vim.keymap.set("n", "<leader>k", "<cmd>Lspsaga hover_doc<CR>")
+		end,
+	})
 
 	-- LSP
 	use({
@@ -209,11 +298,8 @@ return require("packer").startup(function(use)
 	-- GitGutter
 	use("airblade/vim-gitgutter")
 
-	-- Vim Cool
+	-- Vim Cool - Handle search highlighting better
 	use("romainl/vim-cool")
-
-	-- Transparent - allows for toggle
-	use("xiyaowong/nvim-transparent")
 
 	-- Colorscheme - Catppuccin
 	use({
@@ -227,7 +313,6 @@ return require("packer").startup(function(use)
 		as = "rose-pine",
 		config = function()
 			require("rose-pine").setup()
-			vim.cmd("colorscheme rose-pine")
 		end,
 	})
 

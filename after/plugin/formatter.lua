@@ -2,10 +2,10 @@
 ------------
 
 -- Keymap to format
-vim.keymap.set("n", "<leader>ff", "<cmd>Format<CR>", {
-	noremap = true,
-	silent = true,
-})
+-- vim.keymap.set("n", "<leader>ff", "<cmd>Format<CR>", {
+-- 	noremap = true,
+-- 	silent = true,
+-- })
 
 -- Utilities for creating configurations
 local util = require("formatter.util")
