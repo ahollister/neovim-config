@@ -133,6 +133,9 @@ return require("packer").startup(function(use)
 					"nvim-lua/plenary.nvim",
 					"nvim-telescope/telescope.nvim",
 				},
+				mappings = {
+					["<CR>"] = require("obsidian.mapping").gf_passthrough(),
+				},
 				daily_notes = {
 					folder = "notes/dailies",
 					date_format = "%Y-%m-%d",
@@ -172,6 +175,8 @@ return require("packer").startup(function(use)
 			)
 		end,
 	})
+
+	use("beanworks/vim-phpfmt")
 
 	use({
 		"nvimdev/lspsaga.nvim",
