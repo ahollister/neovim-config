@@ -11,6 +11,19 @@ M.dir_has_wp_content = string.find(dir_content, "wp-content", 1, true)
 M.dir_has_wp_includes = string.find(dir_content, "wp-includes", 1, true)
 M.dir_has_wp_admin = string.find(dir_content, "wp-admin", 1, true)
 
+M.auto_format = true
+
+-- Enable, disable or toggle auto_format
+function M.set_auto_format(arg)
+	if arg == "toggle" then
+		M.auto_format = not M.auto_format
+	elseif arg == "enable" then
+		M.auto_format = true
+	elseif arg == "disable" then
+		M.auto_format = false
+	end
+end
+
 -- Is this a WordPress environment?
 function M.is_wp()
 	if M.is_wp_subdirectory() or M.is_wp_root() then
