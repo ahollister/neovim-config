@@ -5,10 +5,7 @@
 vim.api.nvim_create_autocmd("BufWritePost", {
 	group = vim.api.nvim_create_augroup("FormatOnSave", { clear = true }),
 	callback = function()
-		local wp = require("utils-wp")
-		if wp.auto_format then
-			-- Format the current file.
-			vim.cmd([[silent lua require("utils-wp").format_phpcbf()]])
-		end
+		-- Format the current file.
+		vim.cmd([[silent WP auto_format_phpcbf]])
 	end,
 })

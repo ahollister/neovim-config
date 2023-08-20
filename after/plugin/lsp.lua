@@ -104,11 +104,11 @@ require("lspconfig").intelephense.setup({
 	settings = {
 		intelephense = {
 			licenceKey = get_intelephense_license(),
-			environment = {
-				includePaths = {
-					require("utils-wp").get_wp_path(),
-				},
-			},
+			-- environment = {
+			-- 	includePaths = {
+			-- 		require("utils-wp").get_wp_path(),
+			-- 	},
+			-- },
 			files = {
 				maxSize = 5000000,
 			},
