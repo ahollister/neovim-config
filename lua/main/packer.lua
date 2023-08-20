@@ -85,6 +85,11 @@ return require("packer").startup(function(use)
 	-- Github Copilot
 	use("github/copilot.vim")
 
+	-- phpcbf
+	use("ahollister/phpcbf.nvim")
+	-- WP Utils
+	use("ahollister/wp-utils.nvim")
+
 	-- Surround
 	use("tpope/vim-surround")
 
