@@ -22,8 +22,8 @@ end
 
 -- Runs on start
 function ManageColors(color)
-	local default = "catppuccin-mocha"
-	-- local default = "meh"
+	-- local default = "catppuccin-mocha"
+	local default = "meh"
 
 	color = color or default
 	vim.cmd.colorscheme(color)
