@@ -100,18 +100,25 @@ local get_intelephense_license = function()
 	return string.gsub(content, "%s+", "")
 end
 
+local intelephense_settings = {
+	licenceKey = get_intelephense_license(),
+	files = {
+		maxSize = 5000000,
+	},
+}
+
+local wp = require("wp-utils.utils")
+
+if wp.is_wp() then
+	intelephense_settings.environment = {
+		includePaths = {
+			wp.get_wp_path(),
+		},
+	}
+end
+
 require("lspconfig").intelephense.setup({
 	settings = {
-		intelephense = {
-			licenceKey = get_intelephense_license(),
-			-- environment = {
-			-- 	includePaths = {
-			-- 		require("utils-wp").get_wp_path(),
-			-- 	},
-			-- },
-			files = {
-				maxSize = 5000000,
-			},
-		},
+		intelephense = intelephense_settings,
 	},
 })

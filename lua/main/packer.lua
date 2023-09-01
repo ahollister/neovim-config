@@ -311,6 +311,9 @@ return require("packer").startup(function(use)
 	-- Vim Cool - Handle search highlighting better
 	use("romainl/vim-cool")
 
+	-- Colorscheme - Spacebun
+	use({ "ahollister/spacebun" })
+
 	-- Colorscheme - Catppuccin
 	use({
 		"catppuccin/nvim",
