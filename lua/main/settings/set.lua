@@ -1,6 +1,12 @@
 -- VIM SETTINGS
 ---------------
 
+-- Set leader key
+vim.g.mapleader = " "
+
+-- Disable swap files
+vim.opt.swapfile = false
+
 --Netrw
 vim.g.netrw_liststyle = 1
 vim.g.netrw_maxfilenamelen = 60
@@ -72,9 +78,6 @@ vim.opt.sidescroll = 1
 
 -- Make fast!
 vim.opt.updatetime = 50
-
--- Set leader key
-vim.g.mapleader = " "
 
 -- Whitespace chars
 vim.opt.listchars = { tab = ">-", trail = "~", space = "·", eol = "↵" }
