@@ -129,7 +129,7 @@ require("lazy").setup({
 	-- Fugitive
 	{
 		"tpope/vim-fugitive",
-		-- keys = plugins.fugitive.keys,
+		keys = plugins.fugitive.keys,
 	},
 
 	-- Commentary
