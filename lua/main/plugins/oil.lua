@@ -1,7 +1,9 @@
+local oil = require("oil")
+
 local M = {}
 
 M.config = function()
-	require("oil").setup({
+	oil.setup({
 		default_file_explorer = true,
 		columns = {
 			"icon",
@@ -17,7 +19,7 @@ M.config = function()
 		},
 		float = {
 			-- Padding around the floating window
-			padding = 2,
+			padding = 5,
 			max_width = 0,
 			max_height = 0,
 			border = "rounded",
@@ -29,7 +31,7 @@ M.config = function()
 end
 
 M.keys = {
-	{ "<leader>b", require("oil").open, desc = "Open parent directory" },
+	{ "<leader>b", oil.open, desc = "Open parent directory" },
 }
 
 M.lazy = false

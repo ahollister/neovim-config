@@ -1,5 +1,5 @@
 local M = {}
 
-M.requires = "rktjmp/lush.nvim"
+M.dependencies = "rktjmp/lush.nvim"
 
 return M

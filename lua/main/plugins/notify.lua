@@ -6,4 +6,6 @@ M.config = function()
 	})
 end
 
+M.lazy = false
+
 return M

@@ -16,6 +16,8 @@ local plugins = {
 	copilot = require("main.plugins.copilot"),
 	fidget = require("main.plugins.fidget"),
 	formatter = require("main.plugins.formatter"),
+	fugitive = require("main.plugins.fugitive"),
+	gitsigns = require("main.plugins.gitsigns"),
 	guess_indent = require("main.plugins.guess-indent"),
 	harpoon = require("main.plugins.harpoon"),
 	lualine = require("main.plugins.lualine"),
@@ -23,6 +25,9 @@ local plugins = {
 	lspsaga = require("main.plugins.lspsaga"),
 	noice = require("main.plugins.noice"),
 	notify = require("main.plugins.notify"),
+	nvim_dap = require("main.plugins.nvim-dap"),
+	nvim_dap_virtual_text = require("main.plugins.nvim-dap-virtual-text"),
+	nvim_dap_ui = require("main.plugins.nvim-dap-ui"),
 	obsidian = require("main.plugins.obsidian"),
 	oil = require("main.plugins.oil"),
 	phpcbf = require("main.plugins.phpcbf"),
@@ -61,6 +66,7 @@ require("lazy").setup({
 		keys = plugins.telescope.keys,
 		dependencies = plugins.telescope.dependencies,
 		tag = plugins.telescope.tag,
+		lazy = plugins.telescope.lazy,
 	},
 
 	-- Todo Comments
@@ -74,9 +80,6 @@ require("lazy").setup({
 		"folke/noice.nvim",
 		config = plugins.noice.config,
 		event = plugins.noice.event,
-		opts = {
-			-- add any options here
-		},
 		dependencies = plugins.noice.dependencies,
 	},
 
@@ -84,15 +87,18 @@ require("lazy").setup({
 	{
 		"rcarriga/nvim-notify",
 		config = plugins.notify.config,
+		lazy = plugins.notify.lazy,
 	},
-
-	-- Goyo - centers text
-	{ "junegunn/goyo.vim" },
 
 	-- guess tabs vs spaces
 	{
 		"nmac427/guess-indent.nvim",
 		config = plugins.guess_indent.config,
+	},
+
+	{
+		"lewis6991/gitsigns.nvim",
+		config = plugins.gitsigns.config,
 	},
 
 	-- Treesitter
@@ -121,7 +127,10 @@ require("lazy").setup({
 	},
 
 	-- Fugitive
-	{ "tpope/vim-fugitive" },
+	{
+		"tpope/vim-fugitive",
+		-- keys = plugins.fugitive.keys,
+	},
 
 	-- Commentary
 	{ "tpope/vim-commentary" },
@@ -136,6 +145,24 @@ require("lazy").setup({
 	{
 		"github/copilot.vim",
 		keys = plugins.copilot.keys,
+	},
+
+	-- DAP - Debugger Protocol
+	{
+		"mfussenegger/nvim-dap",
+		config = plugins.nvim_dap.config,
+	},
+
+	-- DAP Virtual Text
+	{
+		"theHamsta/nvim-dap-virtual-text",
+		config = plugins.nvim_dap_virtual_text.config,
+	},
+
+	{
+		"rcarriga/nvim-dap-ui",
+		config = plugins.nvim_dap_ui.config,
+		requires = plugins.nvim_dap_ui.requires,
 	},
 
 	-- Surround
@@ -243,7 +270,7 @@ require("lazy").setup({
 	-- Colorscheme - Zenbones
 	{
 		"mcchrish/zenbones.nvim",
-		requires = plugins.zenbones.requires,
+		dependencies = plugins.zenbones.dependencies,
 	},
 
 	-- Colorscheme - meh
