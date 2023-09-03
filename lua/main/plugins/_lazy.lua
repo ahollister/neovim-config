@@ -11,125 +11,125 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = {
-	catppuccin = require("main.plugins.catppuccin"),
-	copilot = require("main.plugins.copilot"),
-	fidget = require("main.plugins.fidget"),
-	formatter = require("main.plugins.formatter"),
-	fugitive = require("main.plugins.fugitive"),
-	gitsigns = require("main.plugins.gitsigns"),
-	guess_indent = require("main.plugins.guess-indent"),
-	harpoon = require("main.plugins.harpoon"),
-	lualine = require("main.plugins.lualine"),
-	lsp_zero = require("main.plugins.lsp_zero"),
-	lspsaga = require("main.plugins.lspsaga"),
-	noice = require("main.plugins.noice"),
-	notify = require("main.plugins.notify"),
-	nvim_dap = require("main.plugins.nvim-dap"),
-	nvim_dap_virtual_text = require("main.plugins.nvim-dap-virtual-text"),
-	nvim_dap_ui = require("main.plugins.nvim-dap-ui"),
-	obsidian = require("main.plugins.obsidian"),
-	oil = require("main.plugins.oil"),
-	phpcbf = require("main.plugins.phpcbf"),
-	rose_pine = require("main.plugins.rose-pine"),
-	smartcolumn = require("main.plugins.smartcolumn"),
-	smoothie = require("main.plugins.smoothie"),
-	telescope = require("main.plugins.telescope"),
-	todo_comments = require("main.plugins.todo-comments"),
-	treesitter = require("main.plugins.treesitter"),
-	treesitter_unit = require("main.plugins.treesitter-unit"),
-	trouble = require("main.plugins.trouble"),
-	ts_autotag = require("main.plugins.ts-autotag"),
-	undotree = require("main.plugins.undotree"),
-	which_key = require("main.plugins.which-key"),
-	wp_utils = require("main.plugins.wp-utils"),
-	zenbones = require("main.plugins.zenbones"),
-}
+-- Plugins
+local catppuccin = require("main.plugins.catppuccin")
+local copilot = require("main.plugins.copilot")
+-- local fidget = require("main.plugins.fidget")
+local formatter = require("main.plugins.formatter")
+local fugitive = require("main.plugins.fugitive")
+local gitsigns = require("main.plugins.gitsigns")
+local guess_indent = require("main.plugins.guess-indent")
+local harpoon = require("main.plugins.harpoon")
+local lualine = require("main.plugins.lualine")
+local lsp_zero = require("main.plugins.lsp_zero")
+local lspsaga = require("main.plugins.lspsaga")
+local noice = require("main.plugins.noice")
+local notify = require("main.plugins.notify")
+local nvim_dap = require("main.plugins.nvim-dap")
+local nvim_dap_virtual_text = require("main.plugins.nvim-dap-virtual-text")
+local nvim_dap_ui = require("main.plugins.nvim-dap-ui")
+local obsidian = require("main.plugins.obsidian")
+local oil = require("main.plugins.oil")
+local phpcbf = require("main.plugins.phpcbf")
+local rose_pine = require("main.plugins.rose-pine")
+local smartcolumn = require("main.plugins.smartcolumn")
+local smoothie = require("main.plugins.smoothie")
+local telescope = require("main.plugins.telescope")
+local todo_comments = require("main.plugins.todo-comments")
+local treesitter = require("main.plugins.treesitter")
+local treesitter_unit = require("main.plugins.treesitter-unit")
+local trouble = require("main.plugins.trouble")
+local ts_autotag = require("main.plugins.ts-autotag")
+local undotree = require("main.plugins.undotree")
+local which_key = require("main.plugins.which-key")
+local wp_utils = require("main.plugins.wp-utils")
+local zenbones = require("main.plugins.zenbones")
 
 require("lazy").setup({
 	-- phpcbf
 	{
 		"ahollister/phpcbf.nvim",
-		config = plugins.phpcbf.config,
+		config = phpcbf.config,
 	},
 
 	-- WP Utils
 	{
 		"ahollister/wp-utils.nvim",
-		config = plugins.wp_utils.config,
+		config = wp_utils.config,
 	},
 
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",
-		config = plugins.telescope.config,
-		keys = plugins.telescope.keys,
-		dependencies = plugins.telescope.dependencies,
-		tag = plugins.telescope.tag,
-		lazy = plugins.telescope.lazy,
+		config = telescope.config,
+		keys = telescope.keys,
+		dependencies = telescope.dependencies,
+		tag = telescope.tag,
+		lazy = telescope.lazy,
 	},
 
 	-- Todo Comments
 	{
 		"folke/todo-comments.nvim",
-		config = plugins.todo_comments.config,
+		config = todo_comments.config,
 	},
 
 	-- Noice
 	{
 		"folke/noice.nvim",
-		config = plugins.noice.config,
-		event = plugins.noice.event,
-		dependencies = plugins.noice.dependencies,
+		config = noice.config,
+		event = noice.event,
+		dependencies = noice.dependencies,
 	},
 
 	-- Notify
 	{
 		"rcarriga/nvim-notify",
-		config = plugins.notify.config,
-		lazy = plugins.notify.lazy,
+		config = notify.config,
+		lazy = notify.lazy,
 	},
 
 	-- guess tabs vs spaces
 	{
 		"nmac427/guess-indent.nvim",
-		config = plugins.guess_indent.config,
+		config = guess_indent.config,
 	},
 
 	{
 		"lewis6991/gitsigns.nvim",
-		config = plugins.gitsigns.config,
+		config = gitsigns.config,
 	},
 
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-		config = plugins.treesitter.config,
-		-- build = plugins.treesitter.build,
+		config = treesitter.config,
+		-- build = treesitter.build,
 	},
 
 	-- JSX Autotag
 	{
 		"windwp/nvim-ts-autotag",
-		config = plugins.ts_autotag.config,
+		config = ts_autotag.config,
 	},
 
 	-- Harpoon
 	{
 		"theprimeagen/harpoon",
-		keys = plugins.harpoon.keys,
+		keys = harpoon.keys,
 	},
 
 	-- Undo Tree
 	{
 		"mbbill/undotree",
-		keys = plugins.undotree.keys,
+		keys = undotree.keys,
 	},
 
 	-- Fugitive
 	{
 		"tpope/vim-fugitive",
-		keys = plugins.fugitive.keys,
+		keys = fugitive.keys,
+		lazy = fugitive.lazy,
 	},
 
 	-- Commentary
@@ -138,31 +138,31 @@ require("lazy").setup({
 	-- Smoothie
 	{
 		"psliwka/vim-smoothie",
-		keys = plugins.smoothie.keys,
+		keys = smoothie.keys,
 	},
 
 	-- Github Copilot
 	{
 		"github/copilot.vim",
-		keys = plugins.copilot.keys,
+		keys = copilot.keys,
 	},
 
 	-- DAP - Debugger Protocol
 	{
 		"mfussenegger/nvim-dap",
-		config = plugins.nvim_dap.config,
+		config = nvim_dap.config,
 	},
 
 	-- DAP Virtual Text
 	{
 		"theHamsta/nvim-dap-virtual-text",
-		config = plugins.nvim_dap_virtual_text.config,
+		config = nvim_dap_virtual_text.config,
 	},
 
 	{
 		"rcarriga/nvim-dap-ui",
-		config = plugins.nvim_dap_ui.config,
-		requires = plugins.nvim_dap_ui.requires,
+		config = nvim_dap_ui.config,
+		requires = nvim_dap_ui.requires,
 	},
 
 	-- Surround
@@ -171,48 +171,48 @@ require("lazy").setup({
 	-- Oil
 	{
 		"stevearc/oil.nvim",
-		config = plugins.oil.config,
-		keys = plugins.oil.keys,
-		lazy = plugins.oil.lazy,
+		config = oil.config,
+		keys = oil.keys,
+		lazy = oil.lazy,
 	},
 
 	-- Obsidian note taking
 	{
 		"epwalsh/obsidian.nvim",
-		config = plugins.obsidian.config,
-		keys = plugins.obsidian.keys,
+		config = obsidian.config,
+		keys = obsidian.keys,
 	},
 
 	-- Which Key
 	{
 		"folke/which-key.nvim",
-		config = plugins.which_key.config,
+		config = which_key.config,
 	},
 
 	{
 		"David-Kunz/treesitter-unit",
-		config = plugins.treesitter_unit.config,
+		config = treesitter_unit.config,
 	},
 
 	{
 		"nvimdev/lspsaga.nvim",
-		config = plugins.lspsaga.config,
-		keys = plugins.lspsaga.keys,
-		after = plugins.lspsaga.after,
+		config = lspsaga.config,
+		keys = lspsaga.keys,
+		after = lspsaga.after,
 	},
 
 	-- LSP
 	{
 		"VonHeikemen/lsp-zero.nvim",
-		config = plugins.lsp_zero.config,
-		branch = plugins.lsp_zero.branch,
-		dependencies = plugins.lsp_zero.dependencies,
+		config = lsp_zero.config,
+		branch = lsp_zero.branch,
+		dependencies = lsp_zero.dependencies,
 	},
 
 	-- Formatter
 	{
 		"mhartington/formatter.nvim",
-		config = plugins.formatter.config,
+		config = formatter.config,
 	},
 
 	-- devicons
@@ -221,27 +221,27 @@ require("lazy").setup({
 	-- Trouble
 	{
 		"folke/trouble.nvim",
-		dependencies = plugins.trouble.dependencies,
+		dependencies = trouble.dependencies,
 	},
 
 	-- Smart Column
 	{
 		"m4xshen/smartcolumn.nvim",
-		config = plugins.smartcolumn.config,
+		config = smartcolumn.config,
 	},
 
 	-- -- Fidget
 	-- {
 	-- 	"j-hui/fidget.nvim",
-	-- 	tag = plugins.fidget.tag,
-	-- 	config = plugins.fidget.config,
+	-- 	tag = fidget.tag,
+	-- 	config = fidget.config,
 	-- },
 
 	-- Lualine
 	{
 		"nvim-lualine/lualine.nvim",
-		config = plugins.lualine.config,
-		requires = plugins.lualine.requires,
+		config = lualine.config,
+		requires = lualine.requires,
 	},
 
 	-- GitGutter
@@ -256,21 +256,21 @@ require("lazy").setup({
 	-- Colorscheme - Catppuccin
 	{
 		"catppuccin/nvim",
-		config = plugins.catppuccin.config,
-		as = plugins.catppuccin.as,
+		config = catppuccin.config,
+		as = catppuccin.as,
 	},
 
 	-- Colorscheme - Rose Pine
 	{
 		"rose-pine/neovim",
-		as = plugins.rose_pine.as,
-		config = plugins.rose_pine.config,
+		as = rose_pine.as,
+		config = rose_pine.config,
 	},
 
 	-- Colorscheme - Zenbones
 	{
 		"mcchrish/zenbones.nvim",
-		dependencies = plugins.zenbones.dependencies,
+		dependencies = zenbones.dependencies,
 	},
 
 	-- Colorscheme - meh

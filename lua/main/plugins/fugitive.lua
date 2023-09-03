@@ -1,7 +1,9 @@
 local M = {}
 
--- M.keys = {
--- 	{ "<leader>gs", ":Git status<CR>" },
--- }
+M.keys = {
+	{ "<leader>gd", ":Gvdiffsplit<CR>" },
+}
+
+M.lazy = false
 
 return M
