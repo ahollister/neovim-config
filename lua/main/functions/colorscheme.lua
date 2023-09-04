@@ -7,12 +7,8 @@ M.colors = {
 	"catppuccin-mocha",
 	"rose-pine",
 	"spaceduck",
-	"zenbones",
 	"tokyobones",
-	"neobones",
 	"rosebones",
-	"duckbones",
-	"kanagawabones",
 }
 
 M.set_default = function()
