@@ -19,6 +19,7 @@ M.config = function()
 			},
 		},
 		telescope.load_extension("harpoon"),
+		telescope.load_extension("notify"),
 	})
 end
 

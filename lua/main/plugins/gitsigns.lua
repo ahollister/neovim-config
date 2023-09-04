@@ -42,7 +42,7 @@ M.config = function()
 			end, { expr = true })
 
 			-- Actions
-			map({ "n", "v" }, "<leader>hs", ":Gitsigns stage_hunk<CR>")
+			-- map({ "n", "v" }, "<leader>hs", ":Gitsigns stage_hunk<CR>")
 			map({ "n", "v" }, "<leader>hr", ":Gitsigns reset_hunk<CR>")
 			map("n", "<leader>gS", gs.stage_buffer)
 			map("n", "<leader>ga", gs.stage_hunk)

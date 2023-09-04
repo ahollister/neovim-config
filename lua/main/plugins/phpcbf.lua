@@ -1,7 +1,7 @@
 local M = {}
 
 M.config = function()
-	local wp = require("wp-utils.utils")
+	local wp = require("wp-utils")
 	local is_wp = wp.is_wp()
 	local wp_path = wp.get_wp_path()
 
@@ -23,5 +23,7 @@ M.config = function()
 
 	require("phpcbf").setup(settings)
 end
+
+M.lazy = false
 
 return M

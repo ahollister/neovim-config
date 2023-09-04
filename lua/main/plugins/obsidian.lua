@@ -38,4 +38,6 @@ M.keys = {
 	},
 }
 
+M.lazy = false
+
 return M

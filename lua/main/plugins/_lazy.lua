@@ -50,6 +50,7 @@ require("lazy").setup({
 	{
 		"ahollister/phpcbf.nvim",
 		config = phpcbf.config,
+		lazy = phpcbf.lazy,
 	},
 
 	-- WP Utils
@@ -181,6 +182,7 @@ require("lazy").setup({
 		"epwalsh/obsidian.nvim",
 		config = obsidian.config,
 		keys = obsidian.keys,
+		lazy = obsidian.lazy,
 	},
 
 	-- Which Key
