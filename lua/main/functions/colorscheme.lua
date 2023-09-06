@@ -79,7 +79,13 @@ M.print_colors = function()
 	for _, color in pairs(M.colors) do
 		message = message .. color .. "\n"
 	end
-	require("notify")(message, "INFO", { title = "Available colors" })
+	local notify = require("notify")
+
+	if notify then
+		require("notify")(message, "INFO", { title = "Available colors" })
+	else
+		print(message)
+	end
 end
 
 M.setup = function()

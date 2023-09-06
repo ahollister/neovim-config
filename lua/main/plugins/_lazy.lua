@@ -24,7 +24,6 @@ local lualine = require("main.plugins.lualine")
 local lsp_zero = require("main.plugins.lsp_zero")
 local lspsaga = require("main.plugins.lspsaga")
 local noice = require("main.plugins.noice")
-local notify = require("main.plugins.notify")
 local nvim_dap = require("main.plugins.nvim-dap")
 local nvim_dap_virtual_text = require("main.plugins.nvim-dap-virtual-text")
 local nvim_dap_ui = require("main.plugins.nvim-dap-ui")
@@ -81,13 +80,6 @@ require("lazy").setup({
 		config = noice.config,
 		event = noice.event,
 		dependencies = noice.dependencies,
-	},
-
-	-- Notify
-	{
-		"rcarriga/nvim-notify",
-		config = notify.config,
-		lazy = notify.lazy,
 	},
 
 	-- guess tabs vs spaces

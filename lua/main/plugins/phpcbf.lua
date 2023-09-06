@@ -1,10 +1,6 @@
 local M = {}
 
 M.config = function()
-	local wp = require("wp-utils")
-	local is_wp = wp.is_wp()
-	local wp_path = wp.get_wp_path()
-
 	-- Generic PHPCBF settings
 	local settings = {
 		auto_format = true,
@@ -14,6 +10,15 @@ M.config = function()
 	}
 
 	-- WP specific settings
+	local wp = require("wp-utils")
+
+	if not wp then
+		return
+	end
+
+	local is_wp = wp.is_wp()
+	local wp_path = wp.get_wp_path()
+
 	if is_wp then
 		settings.auto_format = true
 		settings.phpcbf_path = wp_path .. "/vendor/bin/phpcbf"
