@@ -38,6 +38,11 @@ M.keys = {
 	},
 }
 
+M.dependencies = {
+	"nvim-lua/plenary.nvim",
+	"nvim-telescope/telescope.nvim",
+}
+
 M.lazy = false
 
 return M

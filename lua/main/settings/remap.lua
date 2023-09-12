@@ -2,6 +2,9 @@
 -------------
 
 -- Move between splits
+vim.keymap.set("n", "<leader>b", ":Ex<CR>")
+
+-- Move between splits
 vim.keymap.set("n", "<leader>w", "<C-w>")
 
 -- Kill split

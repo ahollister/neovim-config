@@ -1,9 +1,7 @@
-local oil = require("oil")
-
 local M = {}
 
 M.config = function()
-	oil.setup({
+	require("oil").setup({
 		default_file_explorer = true,
 		columns = {
 			"icon",
@@ -31,7 +29,7 @@ M.config = function()
 end
 
 M.keys = {
-	{ "<leader>b", oil.open, desc = "Open parent directory" },
+	{ "<leader>b", ":Oil<CR>", desc = "Open parent directory" },
 }
 
 M.lazy = false

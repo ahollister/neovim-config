@@ -10,7 +10,7 @@ M.config = function()
 	}
 
 	-- WP specific settings
-	local wp = require("wp-utils")
+	local wp = require("wp-utils.utils")
 
 	if not wp then
 		return
