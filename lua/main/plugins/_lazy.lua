@@ -68,6 +68,13 @@ require("lazy").setup({
 		config = require("main.plugins.treesitter").config,
 	},
 
+	-- Treesitter textobjects
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		config = require("main.plugins.treesitter-textobjects").config,
+		dependencies = require("main.plugins.treesitter-textobjects").dependencies,
+	},
+
 	-- Harpoon
 	{
 		"theprimeagen/harpoon",
