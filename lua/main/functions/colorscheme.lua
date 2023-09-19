@@ -1,7 +1,18 @@
+local function has_value(tab, val)
+	for index, value in ipairs(tab) do
+		if value == val then
+			return true
+		end
+	end
+
+	return false
+end
+
 local M = {}
 
 M.default_color = "meh"
 
+-- List of colorschemes to cycle
 M.colors = {
 	"meh",
 	"catppuccin-mocha",
@@ -9,6 +20,14 @@ M.colors = {
 	"spaceduck",
 	"tokyobones",
 	"rosebones",
+}
+
+-- colorschemes where I don't want to fix_colors
+M.colors_backgrounds = {
+	"catppuccin-mocha",
+	"spaceduck",
+	"rose-pine",
+	"tokyobones",
 }
 
 M.set_default = function()
@@ -27,6 +46,12 @@ M.set_keymaps = function()
 end
 
 M.fix_colors = function()
+	-- Get current color scheme
+	local colorscheme = vim.api.nvim_exec("colorscheme", true)
+	if has_value(M.colors_backgrounds, colorscheme) then
+		return
+	end
+
 	-- Fix Fidget color
 	vim.api.nvim_set_hl(0, "FidgetTask", { bg = "NONE", fg = "#70788a" })
 	vim.api.nvim_set_hl(0, "FidgetTitle", { bg = "NONE", fg = "#70788a" })
@@ -58,20 +83,22 @@ M.cycle_colors = function()
 	-- Get current color scheme
 	local colorscheme = vim.api.nvim_exec("colorscheme", true)
 
-	local num_of_colors = 0
-	for _ in pairs(M.colors) do
-		num_of_colors = num_of_colors + 1
-	end
-
+	local new_color = nil
 	for index, current_color in pairs(M.colors) do
 		if current_color == colorscheme then
 			local is_end = M.colors[index + 1] == nil
-			local new_color = is_end and M.colors[1] or M.colors[index + 1]
-			print("New colorscheme = " .. new_color)
-			vim.api.nvim_exec("colorscheme " .. new_color, true)
-			M.fix_colors()
+			new_color = is_end and M.colors[1] or M.colors[index + 1]
 		end
 	end
+
+	-- If previous colorscheme was not in M.colors, set the first one
+	if not new_color then
+		new_color = M.colors[1]
+	end
+
+	print("New colorscheme = " .. new_color)
+	vim.api.nvim_exec("colorscheme " .. new_color, true)
+	M.fix_colors()
 end
 
 M.print_colors = function()
@@ -94,6 +121,7 @@ M.setup = function()
 	M.set_keymaps()
 end
 
+-- Runs on nvim start
 M.setup()
 
 return M
