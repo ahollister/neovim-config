@@ -34,6 +34,13 @@ require("lazy").setup({
 		keys = require("main.plugins.fine-cmdline").keys,
 	},
 
+	-- Flash
+	{
+		"folke/flash.nvim",
+		event = require("main.plugins.flash").event,
+		keys = require("main.plugins.flash").keys,
+	},
+
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",
