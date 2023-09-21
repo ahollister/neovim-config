@@ -32,7 +32,7 @@ M.colors_backgrounds = {
 
 M.set_default = function()
 	vim.cmd.colorscheme(M.default_color)
-	M.fix_colors()
+	M.fix_colors("NONE")
 end
 
 M.set_keymaps = function()
@@ -43,29 +43,108 @@ M.set_keymaps = function()
 		{ silent = true }
 	)
 	vim.keymap.set("n", "<leader>cd", ":lua require('main.functions.colorscheme').set_default()<CR>", { silent = true })
+	vim.keymap.set(
+		"n",
+		"<leader>cb",
+		":lua require('main.functions.colorscheme').cycle_backgrounds()<CR>",
+		{ silent = true }
+	)
+	vim.keymap.set(
+		"n",
+		"<leader>ct",
+		":lua require('main.functions.colorscheme').toggle_transparency()<CR>",
+		{ silent = true }
+	)
 end
 
-M.fix_colors = function()
+M.dump = function(o)
+	if type(o) == "table" then
+		local s = "{ "
+		for k, v in pairs(o) do
+			if type(k) ~= "number" then
+				k = '"' .. k .. '"'
+			end
+			s = s .. "[" .. k .. "] = " .. M.dump(v) .. ","
+		end
+		return s .. "} "
+	else
+		return tostring(o)
+	end
+end
+
+M.backgrounds = {
+	"#181a21",
+	"#141414",
+	"#202020",
+	"NONE",
+}
+
+M.cycle_backgrounds = function()
+	local hl = vim.api.nvim_get_hl(0, {
+		name = "Normal",
+	})
+
+	local bg = hl["bg"]
+	if bg then
+		bg = string.format("#%06x", hl["bg"])
+	end
+
+	local new_bg = nil
+	for index, value in pairs(M.backgrounds) do
+		if value == bg then
+			local is_end = M.backgrounds[index + 1] == nil
+			new_bg = is_end and M.backgrounds[1] or M.backgrounds[index + 1]
+		end
+	end
+
+	if bg == nil then
+		M.fix_colors(M.backgrounds[1])
+		vim.api.nvim_set_hl(0, "Normal", { bg = M.backgrounds[1] })
+	else
+		M.fix_colors(new_bg)
+		vim.api.nvim_set_hl(0, "Normal", { bg = new_bg })
+	end
+end
+
+M.toggle_transparency = function()
+	local hl = vim.api.nvim_get_hl(0, {
+		name = "Normal",
+	})
+
+	local bg = hl["bg"]
+
+	if bg == nil then
+		M.fix_colors(M.backgrounds[1])
+		vim.api.nvim_set_hl(0, "Normal", { bg = M.backgrounds[1] })
+	else
+		M.fix_colors("NONE")
+		vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+	end
+end
+
+M.fix_colors = function(background)
 	-- Get current color scheme
-	local colorscheme = vim.api.nvim_exec("colorscheme", true)
-	if has_value(M.colors_backgrounds, colorscheme) then
-		return
+	if background == "NONE" then
+		local colorscheme = vim.api.nvim_exec("colorscheme", true)
+		if has_value(M.colors_backgrounds, colorscheme) then
+			return
+		end
 	end
 
 	-- Fix Fidget color
-	vim.api.nvim_set_hl(0, "FidgetTask", { bg = "NONE", fg = "#70788a" })
-	vim.api.nvim_set_hl(0, "FidgetTitle", { bg = "NONE", fg = "#70788a" })
+	vim.api.nvim_set_hl(0, "FidgetTask", { bg = background, fg = "#70788a" })
+	vim.api.nvim_set_hl(0, "FidgetTitle", { bg = background, fg = "#70788a" })
 	-- Manage Transparency
-	vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
-	vim.api.nvim_set_hl(0, "FloatShadow", { bg = "NONE" })
-	vim.api.nvim_set_hl(0, "FloatShadowThrough", { bg = "NONE" })
-	vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE", fg = "#70788a" })
-	vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "NONE" })
+	vim.api.nvim_set_hl(0, "Normal", { bg = background })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = background })
+	vim.api.nvim_set_hl(0, "FloatShadow", { bg = background })
+	vim.api.nvim_set_hl(0, "FloatShadowThrough", { bg = background })
+	vim.api.nvim_set_hl(0, "FloatBorder", { bg = background, fg = "#70788a" })
+	vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = background })
 	-- Fixes Wilder command view
-	vim.api.nvim_set_hl(0, "dkoBgLight", { bg = "NONE" })
+	vim.api.nvim_set_hl(0, "dkoBgLight", { bg = background })
 	-- Line numbers
-	vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE", fg = "#70788a" })
+	vim.api.nvim_set_hl(0, "LineNr", { bg = background, fg = "#70788a" })
 	vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#000000", fg = "#bbbbbb" })
 	vim.api.nvim_set_hl(0, "CursorLine", { bg = "#000000" })
 	-- Normal (command output text)
@@ -73,10 +152,10 @@ M.fix_colors = function()
 	-- UI vertsplit
 	vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#888888" })
 	-- GitGutter
-	vim.api.nvim_set_hl(0, "GitGutterAdd", { bg = "NONE", fg = "#88bd53" })
-	vim.api.nvim_set_hl(0, "DiffChange", { bg = "NONE", fg = "#ad8445" })
-	vim.api.nvim_set_hl(0, "DiffChangeDelete", { bg = "NONE", fg = "#ad8445" })
-	vim.api.nvim_set_hl(0, "DiffDelete", { bg = "NONE", fg = "#bd5c5c" })
+	vim.api.nvim_set_hl(0, "GitGutterAdd", { bg = background, fg = "#88bd53" })
+	vim.api.nvim_set_hl(0, "DiffChange", { bg = background, fg = "#ad8445" })
+	vim.api.nvim_set_hl(0, "DiffChangeDelete", { bg = background, fg = "#ad8445" })
+	vim.api.nvim_set_hl(0, "DiffDelete", { bg = background, fg = "#bd5c5c" })
 end
 
 M.cycle_colors = function()
@@ -117,7 +196,7 @@ end
 
 M.setup = function()
 	M.set_default()
-	M.fix_colors()
+	M.fix_colors("NONE")
 	M.set_keymaps()
 end
 
