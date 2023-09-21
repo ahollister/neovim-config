@@ -84,26 +84,26 @@ M.cycle_backgrounds = function()
 		name = "Normal",
 	})
 
-	local bg = hl["bg"]
-	if bg then
-		bg = string.format("#%06x", hl["bg"])
+	local current_bg = hl["bg"]
+	if current_bg then
+		current_bg = string.format("#%06x", hl["bg"])
 	end
 
 	local new_bg = nil
 	for index, value in pairs(M.backgrounds) do
-		if value == bg then
+		if value == current_bg then
 			local is_end = M.backgrounds[index + 1] == nil
 			new_bg = is_end and M.backgrounds[1] or M.backgrounds[index + 1]
 		end
 	end
 
-	if bg == nil then
-		M.fix_colors(M.backgrounds[1])
-		vim.api.nvim_set_hl(0, "Normal", { bg = M.backgrounds[1] })
-	else
-		M.fix_colors(new_bg)
-		vim.api.nvim_set_hl(0, "Normal", { bg = new_bg })
+	if not new_bg then
+		new_bg = M.backgrounds[1]
 	end
+
+	M.fix_colors(new_bg)
+	vim.api.nvim_set_hl(0, "Normal", { bg = new_bg })
+	print("New background: " .. new_bg)
 end
 
 M.toggle_transparency = function()
