@@ -29,7 +29,7 @@ M.keys = function()
 		{ "<leader>fg", builtin.git_files, desc = "Git Files" },
 		{ "<leader>fh", builtin.help_tags, desc = "Help tags" },
 		{ "<leader>fo", builtin.oldfiles, desc = "Recent files" },
-		{ "<leader>hs", ":Telescope harpoon marks<CR>", desc = "Harpoon marks" },
+		{ "<leader>ht", ":Telescope harpoon marks<CR>", desc = "Harpoon marks" },
 		{ "<leader>gs", ":Telescope git_status<CR>", desc = "Git Status" },
 	}
 end

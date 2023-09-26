@@ -37,8 +37,8 @@ require("lazy").setup({
 	-- Flash
 	{
 		"folke/flash.nvim",
-		event = require("main.plugins.flash").event,
 		keys = require("main.plugins.flash").keys,
+		event = require("main.plugins.flash").event,
 	},
 
 	-- Telescope
@@ -55,12 +55,6 @@ require("lazy").setup({
 	{
 		"folke/todo-comments.nvim",
 		config = require("main.plugins.todo-comments").config,
-	},
-
-	-- guess tabs vs spaces
-	{
-		"nmac427/guess-indent.nvim",
-		config = require("main.plugins.guess-indent").config,
 	},
 
 	-- Git signs
@@ -170,12 +164,6 @@ require("lazy").setup({
 	{
 		"folke/trouble.nvim",
 		dependencies = require("main.plugins.trouble").dependencies,
-	},
-
-	-- Smart Column
-	{
-		"m4xshen/smartcolumn.nvim",
-		config = require("main.plugins.smartcolumn").config,
 	},
 
 	-- Fidget

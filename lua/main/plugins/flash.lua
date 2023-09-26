@@ -16,14 +16,6 @@ M.keys = {
 		desc = "Flash",
 	},
 	{
-		"S",
-		mode = { "n", "o", "x" },
-		function()
-			require("flash").treesitter()
-		end,
-		desc = "Flash Treesitter",
-	},
-	{
 		"r",
 		mode = "o",
 		function()
@@ -39,19 +31,11 @@ M.keys = {
 	},
 	{
 		"R",
-		mode = { "o", "x" },
+		mode = { "n", "o", "x" },
 		function()
 			require("flash").treesitter_search()
 		end,
 		desc = "Treesitter Search",
-	},
-	{
-		"<c-s>",
-		mode = { "c" },
-		function()
-			require("flash").toggle()
-		end,
-		desc = "Toggle Flash Search",
 	},
 }
 
