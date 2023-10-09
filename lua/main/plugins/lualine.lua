@@ -38,7 +38,7 @@ M.config = function()
 						c = { fg = colors.gray, bg = colors.innerbg },
 					},
 					insert = {
-						a = { fg = colors.insert, bg = colors.outerbg, gui = "bold" },
+						a = { fg = colors.darkgray, bg = colors.insert, gui = "bold" },
 						b = { fg = colors.gray, bg = colors.outerbg },
 						c = { fg = colors.gray, bg = colors.innerbg },
 					},
