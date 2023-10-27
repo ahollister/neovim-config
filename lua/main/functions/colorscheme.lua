@@ -18,6 +18,7 @@ M.colors = {
 	"catppuccin-mocha",
 	"rose-pine",
 	"spaceduck",
+	"tokyonight",
 	"tokyobones",
 	"rosebones",
 }

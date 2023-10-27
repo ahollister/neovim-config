@@ -5,7 +5,7 @@
 vim.keymap.set("n", "<leader>lw", [[viwdi<SPACE>console.log(<c-r>")<esc>]])
 vim.keymap.set("v", "<leader>;", [[di<SPACE>console.log(<c-r>")<esc>]])
 
-vim.opt.autoindent = false
+-- vim.opt.autoindent = false
 
 -- Runs after each file save on BufWritePost event.
 vim.api.nvim_create_autocmd("BufWritePost", {

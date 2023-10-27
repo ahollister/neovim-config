@@ -18,12 +18,20 @@ require("lazy").setup({
 		"ahollister/phpcbf.nvim",
 		config = require("main.plugins.phpcbf").config,
 		lazy = require("main.plugins.phpcbf").lazy,
+		dev = true,
 	},
 
 	-- WP Utils
 	{
 		"ahollister/wp-utils.nvim",
 		config = require("main.plugins.wp-utils").config,
+		dev = true,
+	},
+
+	-- Guess Indent
+	{
+		"nmac427/guess-indent.nvim",
+		config = require("main.plugins.guess-indent").config,
 	},
 
 	-- Fine CMDline
@@ -186,6 +194,17 @@ require("lazy").setup({
 	-- Vim Cool - Handle search highlighting better
 	{ "romainl/vim-cool" },
 
+	-- Colorscheme - tokyonight
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			transparent = true,
+			style = "storm",
+		},
+	},
+
 	-- Colorscheme - Spacebun
 	{ "ahollister/spacebun" },
 
@@ -212,5 +231,11 @@ require("lazy").setup({
 	-- Colorscheme - meh
 	{
 		"davidosomething/vim-colors-meh",
+	},
+}, {
+	dev = {
+		path = "/Users/adam/Dev/nvim/plugins/",
+		patterns = {}, -- For example {"folke"}
+		fallback = false, -- Fallback to git when local plugin doesn't exist
 	},
 })

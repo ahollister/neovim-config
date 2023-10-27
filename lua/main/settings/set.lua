@@ -28,13 +28,11 @@ vim.opt.errorbells = false
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-
--- Use spaces for indents
-vim.opt.expandtab = true
-
+-- Use tabs for indents
+vim.opt.expandtab = false
 -- Smart auto indenting
-vim.opt.smartindent = true
 vim.opt.autoindent = true
+vim.opt.smartindent = true
 
 -- Don't line wrap
 vim.opt.wrap = false

@@ -11,6 +11,7 @@ M.config = function()
 		},
 		ensure_installed = { "javascript", "typescript", "php", "lua", "vim", "markdown", "markdown_inline" },
 		sync_install = false,
+		indent = { enable = true },
 		auto_install = true,
 		highlight = {
 			enable = true,

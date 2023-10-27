@@ -10,6 +10,7 @@ M.config = function()
 		"tsserver",
 		"eslint",
 		"lua_ls",
+		"jsonls",
 		"intelephense",
 		"cssls",
 		"bashls",
@@ -63,6 +64,19 @@ M.config = function()
 				lint = {
 					unknownAtRules = "ignore",
 				},
+			},
+		},
+	})
+
+	-- JSON LS
+	require("lspconfig").jsonls.setup({})
+
+	-- stylelint_lsp
+	require("lspconfig").stylelint_lsp.setup({
+		settings = {
+			stylelintplus = {
+				autoFixOnSave = true,
+				-- see available options in stylelint-lsp documentation
 			},
 		},
 	})
