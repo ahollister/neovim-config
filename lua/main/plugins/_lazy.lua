@@ -197,29 +197,15 @@ require("lazy").setup({
 	-- Colorizer
 	{
 		"NvChad/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup({
-				filetypes = { "*" },
-				user_default_options = {
-					css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-					css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-					tailwind = true, -- Enable tailwind colors
-					-- parsers can contain values used in |user_default_options|
-					sass = { enable = true, parsers = { "css" } }, -- Enable sass colors
-				},
-			})
-		end,
+		config = require("main.plugins.colorizer").config,
 	},
 
 	-- Colorscheme - tokyonight
 	{
 		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {
-			transparent = true,
-			style = "storm",
-		},
+		lazy = require("main.plugins.tokyonight").lazy,
+		priority = require("main.plugins.tokyonight").priority,
+		opts = require("main.plugins.tokyonight").opts,
 	},
 
 	-- Colorscheme - Spacebun
