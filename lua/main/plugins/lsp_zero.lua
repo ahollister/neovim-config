@@ -73,6 +73,10 @@ M.config = function()
 
 	-- stylelint_lsp
 	require("lspconfig").stylelint_lsp.setup({
+		filetypes = {
+			"css",
+			"scss",
+		},
 		settings = {
 			stylelintplus = {
 				autoFixOnSave = true,
