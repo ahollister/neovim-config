@@ -22,11 +22,12 @@ M.config = function()
 	local is_wp = wp.is_wp()
 	local wp_path = wp.get_wp_path()
 
-	-- Try and find the PHPCBF executable path.
+	-- Try and find the PHPCBF executable path
 	local function find_phpcbf_path()
 		local cwd = vim.fn.getcwd()
+		local phpcbf_path = "/Users/adam/.composer/vendor/bin/phpcbf"
 
-		-- First try current working directory + vendor.
+		-- First try current working directory + vendor
 		local cwd_vendor = cwd .. "/vendor/bin/phpcbf"
 		if file_exists(cwd_vendor) then
 			return cwd_vendor
@@ -45,24 +46,17 @@ M.config = function()
 			end
 		end
 
-		-- We didn't find it in CWD, wp root, or wp-content. Give up.
-		return nil
+		-- We didn't find it in CWD, wp root, or wp-content. Use global.
+		return phpcbf_path
 	end
-
-	local global_phpcbf_path = "/Users/adam/.composer/vendor/bin/phpcbf"
-	local global_phpcbf_ruleset = "PSR2"
 
 	-- PHPCBF settings
 	local settings = {
 		auto_format = true,
-		phpcbf_path = find_phpcbf_path() or global_phpcbf_path,
-		phpcbf_ruleset = global_phpcbf_ruleset,
+		phpcbf_path = find_phpcbf_path(),
+		phpcbf_ruleset = nil,
 		check_file_extension = true,
 	}
-
-	if is_wp and settings.phpcbf_path ~= global_phpcbf_path then
-		settings.phpcbf_ruleset = nil
-	end
 
 	require("phpcbf").setup(settings)
 end
