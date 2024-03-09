@@ -80,6 +80,7 @@ M.config = function()
 		settings = {
 			stylelintplus = {
 				autoFixOnSave = true,
+				ignoreFiles = { "**/*.js" },
 				-- see available options in stylelint-lsp documentation
 			},
 		},
