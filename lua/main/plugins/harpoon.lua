@@ -1,11 +1,47 @@
 local M = {}
 
-M.keys = {
-	{ "<leader>hh", "<cmd> lua require('harpoon.ui').toggle_quick_menu()<CR>", desc = "Quick menu" },
-	{ "<leader>ha", "<cmd> lua require('harpoon.mark').add_file()<CR>", desc = "Add file to harpoon" },
-	{ "<leader><Right>", "<cmd> lua require('harpoon.ui').nav_next()<CR>", desc = "Harpoon Next File" },
-	{ "<leader><Left>", "<cmd> lua require('harpoon.ui').nav_prev()<CR>", desc = "Harpoon Previous File" },
-	{ "<leader>j", "<cmd> lua require('harpoon.ui').nav_next()<CR>", desc = "Harpoon Next File" },
-}
+M.lazy = false
+
+M.config = function()
+	local harpoon = require("harpoon")
+	harpoon:setup()
+
+	vim.keymap.set("n", "<leader>ha", function()
+		harpoon:list():append()
+	end)
+	vim.keymap.set("n", "<leader>hh", function()
+		harpoon.ui:toggle_quick_menu(harpoon:list())
+	end)
+	vim.keymap.set("n", "<leader><Left>", function()
+		harpoon:list():prev()
+	end)
+	vim.keymap.set("n", "<leader><Right>", function()
+		harpoon:list():next()
+	end)
+	vim.keymap.set("n", "<leader>hj", function()
+		harpoon:list():prev()
+	end)
+	vim.keymap.set("n", "<leader>hk", function()
+		harpoon:list():next()
+	end)
+	vim.keymap.set("n", "<leader>ht", function()
+		local conf = require("telescope.config").values
+		local file_paths = {}
+		for _, item in ipairs(harpoon:list().items) do
+			table.insert(file_paths, item.value)
+		end
+
+		require("telescope.pickers")
+			.new({}, {
+				prompt_title = "Harpoon",
+				finder = require("telescope.finders").new_table({
+					results = file_paths,
+				}),
+				previewer = conf.file_previewer({}),
+				sorter = conf.generic_sorter({}),
+			})
+			:find()
+	end, { desc = "Open harpoon window" })
+end
 
 return M

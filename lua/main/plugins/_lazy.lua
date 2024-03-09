@@ -86,8 +86,11 @@ require("lazy").setup({
 
 	-- Harpoon
 	{
-		"theprimeagen/harpoon",
-		keys = require("main.plugins.harpoon").keys,
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = require("main.plugins.harpoon").config,
+		lazy = require("main.plugins.harpoon").lazy,
 	},
 
 	-- Undo Tree
@@ -127,15 +130,6 @@ require("lazy").setup({
 		config = require("main.plugins.oil").config,
 		lazy = require("main.plugins.oil").lazy,
 		keys = require("main.plugins.oil").keys,
-	},
-
-	-- Obsidian note taking
-	{
-		"epwalsh/obsidian.nvim",
-		config = require("main.plugins.obsidian").config,
-		keys = require("main.plugins.obsidian").keys,
-		lazy = require("main.plugins.obsidian").lazy,
-		dependencies = require("main.plugins.obsidian").dependencies,
 	},
 
 	-- Which Key
