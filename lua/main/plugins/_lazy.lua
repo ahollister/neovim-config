@@ -28,6 +28,13 @@ require("lazy").setup({
 		dev = true,
 	},
 
+	-- Nota
+	{
+		"ahollister/nota.nvim",
+		config = require("main.plugins.nota").config,
+		dev = true,
+	},
+
 	-- Guess Indent
 	{
 		"nmac427/guess-indent.nvim",

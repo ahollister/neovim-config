@@ -10,7 +10,6 @@ M.config = function()
 			"mtime",
 		},
 		delete_to_trash = true,
-		trash_command = "trash",
 		view_options = {
 			-- Show files and directories that start with "."
 			show_hidden = true,
