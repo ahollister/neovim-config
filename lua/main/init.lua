@@ -7,3 +7,6 @@ require("main.plugins._lazy")
 
 -- Startup functions
 require("main.functions.colorscheme")
+
+-- AutoCmds
+require("main.autocmd.yank_highlight")
