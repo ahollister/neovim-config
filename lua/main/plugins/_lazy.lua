@@ -18,21 +18,21 @@ require("lazy").setup({
 		"ahollister/phpcbf.nvim",
 		config = require("main.plugins.phpcbf").config,
 		lazy = require("main.plugins.phpcbf").lazy,
-		dev = true,
+		dev = false,
 	},
 
 	-- WP Utils
 	{
 		"ahollister/wp-utils.nvim",
 		config = require("main.plugins.wp-utils").config,
-		dev = true,
+		dev = false,
 	},
 
 	-- Nota
 	{
 		"ahollister/nota.nvim",
 		config = require("main.plugins.nota").config,
-		dev = true,
+		dev = false,
 	},
 
 	-- Guess Indent

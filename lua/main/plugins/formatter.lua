@@ -4,6 +4,17 @@ M.config = function()
 	-- Utilities for creating configurations
 	local util = require("formatter.util")
 
+	-- NIX
+	local nix_config = {
+		function()
+			return {
+				exe = "nixpkgs-fmt",
+				stdin = true,
+				args = {},
+			}
+		end,
+	}
+
 	-- LUA
 	local lua_config = {
 		-- "formatter.filetypes.lua" defines default configurations for lua
@@ -95,7 +106,6 @@ M.config = function()
 			typescriptreact = prettier_config,
 			typescript = prettier_config,
 			json = prettier_config,
-			["jsonc"] = prettier_config,
 			["json5"] = prettier_config,
 			["json-stringify"] = prettier_config,
 			["json-to-graphql-query"] = prettier_config,
@@ -107,6 +117,9 @@ M.config = function()
 
 			-- LUA
 			lua = lua_config,
+
+			-- NIX
+			nix = nix_config,
 
 			-- PHP
 			-- php = php_config,
