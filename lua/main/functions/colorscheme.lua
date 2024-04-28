@@ -10,7 +10,7 @@ end
 
 local M = {}
 
-M.default_color = "tokyonight"
+M.default_color = "meh"
 
 -- List of colorschemes to cycle
 M.colors = {
