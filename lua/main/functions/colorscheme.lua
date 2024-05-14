@@ -10,7 +10,7 @@ end
 
 local M = {}
 
-M.default_color = "meh"
+M.default_color = "tokyonight"
 
 -- List of colorschemes to cycle
 M.colors = {
@@ -147,7 +147,7 @@ M.fix_colors = function(background)
 	-- Line numbers
 	vim.api.nvim_set_hl(0, "LineNr", { bg = background, fg = "#70788a" })
 	vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#000000", fg = "#bbbbbb" })
-	vim.api.nvim_set_hl(0, "CursorLine", { bg = "#000000" })
+	vim.api.nvim_set_hl(0, "CursorLine", { bg = "#000001" })
 	-- Normal (command output text)
 	vim.api.nvim_set_hl(0, "Normal", { fg = "#ffffff" })
 	-- UI vertsplit
