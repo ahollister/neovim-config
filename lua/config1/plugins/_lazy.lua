@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 ---@diagnostic disable-next-line: undefined-field
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -13,13 +14,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Source plugin configs.
-require("lazy").setup("config1.plugins.configs",
-	{
-		change_detection = { enabled = false },
-		dev = {
-			path = "/Users/adam/Dev/nvim/plugins/",
-			patterns = {}, -- For example {"folke"}
-			fallback = false, -- Fallback to git when local plugin doesn't exist
-		}
-	}
-)
+require("lazy").setup("config1.plugins.configs", {
+	change_detection = { enabled = false },
+	dev = {
+		path = os.getenv('HOME') .. "/nvim/plugins/",
+		patterns = {}, -- For example {"folke"}
+		fallback = false, -- Fallback to git when local plugin doesn't exist
+	},
+})
