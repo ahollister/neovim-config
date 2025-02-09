@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("config1.plugins.configs", {
 	change_detection = { enabled = false },
 	dev = {
-		path = os.getenv('HOME') .. "/nvim/plugins/",
+		path = os.getenv("HOME") .. "/nvim/plugins/",
 		patterns = {}, -- For example {"folke"}
 		fallback = false, -- Fallback to git when local plugin doesn't exist
 	},

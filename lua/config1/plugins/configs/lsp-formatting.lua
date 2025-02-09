@@ -45,8 +45,21 @@ return {
 					return
 				end
 
+				local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
+				local has_formatter = false
+
+				-- Check if any active LSP client supports formatting
+				for _, client in ipairs(clients) do
+					if client.supports_method("textDocument/formatting") then
+						has_formatter = true
+						break
+					end
+				end
+
 				-- If there's LSP format function available for current buffer, run it.
-				vim.lsp.buf.format()
+				if has_formatter then
+					vim.lsp.buf.format()
+				end
 			end,
 		})
 	end,
