@@ -44,6 +44,11 @@ return {
 				if file_exists(wp_content_vendor) then
 					return wp_content_vendor
 				end
+
+				local vip_mu_vendor = wp_path .. "/wp-content/client-mu-plugins/vendor/bin/phpcbf"
+				if file_exists(vip_mu_vendor) then
+					return vip_mu_vendor
+				end
 			end
 
 			-- We didn't find it in CWD, wp root, or wp-content. Use global.
