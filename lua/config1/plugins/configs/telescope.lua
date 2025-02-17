@@ -32,8 +32,8 @@ return {
 		keys = function()
 			local builtin = require("telescope.builtin")
 			return {
-				--{ "<leader>ff", builtin.find_files, desc = "Find Files" },
-				---{ "<leader>fs", builtin.live_grep, desc = "Live Grep" },
+				{ "<leader>tf", builtin.find_files, desc = "Find Files" },
+				{ "<leader>tt", builtin.live_grep, desc = "Live Grep" },
 				{ "<leader>fg", builtin.git_files, desc = "Git Files" },
 				{ "<leader>fh", builtin.help_tags, desc = "Help tags" },
 				{ "<leader>fo", builtin.oldfiles, desc = "Recent files" },
@@ -44,23 +44,23 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 		tag = "0.1.2",
-		lazy = false
+		lazy = false,
 	},
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
-		config = function ()
-			require("telescope").setup {
+		config = function()
+			require("telescope").setup({
 				extensions = {
 					["ui-select"] = {
-						require("telescope.themes").get_dropdown {}
-					}
-				}
-			}
+						require("telescope.themes").get_dropdown({}),
+					},
+				},
+			})
 			require("telescope").load_extension("ui-select")
-		end
+		end,
 	},
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "make"
-	}
+		build = "make",
+	},
 }
